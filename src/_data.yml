@@ -1,7 +1,7 @@
 lang: es
 
 metas:
-    description: Una instalación perdida en tu oído
+    description: "=description || Una instalación perdida en tu oído"
     title: "=title"
     image: "=image"
     lang: es
