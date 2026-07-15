@@ -25,3 +25,11 @@ export const createTagUrl = (tag: string): string => {
 export const createAuthorUrl = (author: string): string => {
     return `/author/${normalizeTaxonomyValue(author)}/`;
 };
+
+export const createWikiProjectUrl = (project: string): string => {
+    return `/wiki/projects/${normalizeTaxonomyValue(project)}/`;
+};
+
+export const createPostsArchiveUrl = (page: number): string => {
+    return page <= 1 ? "/posts/" : `/posts/page/${page}/`;
+};

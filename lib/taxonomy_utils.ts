@@ -9,6 +9,8 @@ interface TaxonomyGroup {
 interface TaxonomyPageSpec {
     field: string;
     kind: string;
+    includeHeading?: boolean;
+    scopeQuery?: string;
     createHeading: (label: string) => string;
     createQuery: (value: string) => string;
     createTitle: (label: string) => string;
@@ -124,7 +126,9 @@ export function* buildTaxonomyPages(
     search: Lume.Data["search"],
     spec: TaxonomyPageSpec,
 ): Generator<Record<string, unknown>> {
-    const values: string[] = search.values(spec.field, "type=post") as string[];
+    const includeHeading: boolean = spec.includeHeading ?? true;
+    const scopeQuery: string = spec.scopeQuery ?? "type=post";
+    const values: string[] = search.values(spec.field, scopeQuery) as string[];
     const groups: TaxonomyGroup[] = groupTaxonomyValues(values, spec.createUrl);
 
     for (const group of groups) {
@@ -151,7 +155,11 @@ export function* buildTaxonomyPages(
             title: spec.createTitle(group.label),
             posts,
             content: `
-<h1>${escapeHtml(spec.createHeading(group.label))}</h1>
+${
+                includeHeading
+                    ? `<h1>${escapeHtml(spec.createHeading(group.label))}</h1>`
+                    : ""
+            }
 ${renderAliasNote(spec.kind, group.aliases)}
 <ul>
 ${renderPostsList(posts)}

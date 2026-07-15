@@ -1,5 +1,10 @@
 import { assertEquals } from "@std/assert";
-import { createAuthorUrl, createTagUrl } from "$urutau/lib/url_utils.ts";
+import {
+    createAuthorUrl,
+    createPostsArchiveUrl,
+    createTagUrl,
+    createWikiProjectUrl,
+} from "$urutau/lib/url_utils.ts";
 
 // createTagUrl ==>
 
@@ -44,4 +49,19 @@ Deno.test("createAuthorUrl handles leading/trailing whitespace", (): void => {
 Deno.test("createAuthorUrl normalizes spaces and punctuation", (): void => {
     const result: string = createAuthorUrl(" SeÑor Example, Jr. ");
     assertEquals(result, "/author/senor-example-jr/");
+});
+
+Deno.test("createWikiProjectUrl normalizes project names", (): void => {
+    const result: string = createWikiProjectUrl(" Vexilo Docs ");
+    assertEquals(result, "/wiki/projects/vexilo-docs/");
+});
+
+Deno.test("createPostsArchiveUrl returns the root archive for page one", (): void => {
+    const result: string = createPostsArchiveUrl(1);
+    assertEquals(result, "/posts/");
+});
+
+Deno.test("createPostsArchiveUrl returns nested archive pages after page one", (): void => {
+    const result: string = createPostsArchiveUrl(3);
+    assertEquals(result, "/posts/page/3/");
 });

@@ -36,7 +36,7 @@ const PostBody = (
     };
 
     return (
-        <main>
+        <main style="--line-length: 60rem">
             <h1>{title}</h1>
             <p>
                 {description}

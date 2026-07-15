@@ -5,7 +5,7 @@ const SiteFooter = (): JSX.Component => {
                 <small>
                     © 2025 - {new Date().getFullYear()}{" "}
                     Urutaú Limited. (Casi) todos los derechos reservados.
-                    <chip>v1.2.0-first-light</chip>
+                    <chip>v1.3.0-first-light</chip>
                 </small>
             </p>
             <p>
@@ -81,7 +81,6 @@ const SiteFooter = (): JSX.Component => {
                     missing.css
                 </a>.
                 <br />
-                Este sitio se creó sin utilizar IA (LLMs).
             </p>
         </footer>
     );

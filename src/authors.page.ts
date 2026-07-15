@@ -13,5 +13,11 @@ export default function* ({ search }: Lume.Data) {
         createTitle: (label: string): string =>
             `Artículos escritos por: ${label}`,
         createUrl: createAuthorUrl,
+        extendPageData: (
+            group: { label: string },
+        ): Record<string, unknown> => ({
+            description:
+                `Archivo de publicaciones escritas por ${group.label}.`,
+        }),
     });
 }

@@ -246,6 +246,14 @@ site.use(robots({
 }));
 
 site.use(seo({
+    options: {
+        body: {
+            maxCommonWords: 42,
+            min: 60,
+            max: 30000,
+            unit: "word",
+        },
+    },
     output: (reports: Map<string, ErrorMessage[]>): void => {
         if (!reports.size) {
             console.info("No SEO errors found!");

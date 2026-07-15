@@ -3,6 +3,9 @@ import { PostTags } from "$urutau/components/shared/PostTags.tsx";
 import { PostAuthor } from "$urutau/components/shared/PostAuthor.tsx";
 
 export const title: string = "¡Bienvenid@!";
+export const description: string =
+    "Portada de Urutaú Limited con acceso a publicaciones recientes y secciones principales del sitio.";
+export const image: string = "/img/urutau-ltd-og.png";
 export const layout: string = "layout.tsx";
 export const pagefind: boolean = true;
 

@@ -16,6 +16,8 @@ export default function* ({ search }: Lume.Data) {
         extendPageData: (
             group: { label: string },
         ): Record<string, unknown> => ({
+            description:
+                `Archivo de publicaciones etiquetadas como ${group.label}.`,
             tag: group.label,
         }),
     });

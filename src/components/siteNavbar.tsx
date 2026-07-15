@@ -54,7 +54,9 @@ const SiteNavbar = ({ url }: Props): JSX.Component => {
                 src="/img/urutau.png"
                 fetchpriority="high"
             />
-            <h1>Urutaú LTD.</h1>
+            <p class="<h2>">
+                <strong>Urutaú Limited</strong>
+            </p>
             <nav>
                 <ul role="list">
                     <li>
@@ -92,6 +94,13 @@ const SiteNavbar = ({ url }: Props): JSX.Component => {
                             <li>
                                 <LinkItem
                                     currentUrl={url}
+                                    href="/wiki"
+                                    text="Wiki"
+                                />
+                            </li>
+                            <li>
+                                <LinkItem
+                                    currentUrl={url}
                                     href="/software"
                                     text="Software"
                                 />
@@ -118,6 +127,36 @@ const SiteNavbar = ({ url }: Props): JSX.Component => {
                                 />
                             </li>
                         </ul>
+                    </li>
+                    <li>
+                        <strong>
+                            <a
+                                href="https://forge.urutau-ltd.org/"
+                                class="&lt;button&gt; inline-size:100%"
+                            >
+                                IT-Tools ↗︎
+                            </a>
+                        </strong>
+                    </li>
+                    <li>
+                        <strong>
+                            <a
+                                href="https://tool.urutau-ltd.org/"
+                                class="&lt;button&gt; inline-size:100%"
+                            >
+                                CyberChef ↗︎
+                            </a>
+                        </strong>
+                    </li>
+                    <li>
+                        <strong>
+                            <a
+                                href="https://siren.urutau-ltd.org/"
+                                class="&lt;button&gt; inline-size:100%"
+                            >
+                                Mermaid Editor ↗︎
+                            </a>
+                        </strong>
                     </li>
                 </ul>
             </nav>

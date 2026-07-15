@@ -1,5 +1,7 @@
 export default function* () {
     yield {
+        description:
+            "Información de licencias y código fuente de los archivos JavaScript usados en el sitio.",
         url: "/jslicense/",
         content: `<!DOCTYPE html>
 <html lang="en">
@@ -7,6 +9,7 @@ export default function* () {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Información de licencias y código fuente de los archivos JavaScript usados en el sitio." />
     <title>JavaScript License Information</title>
 </head>
 <body>

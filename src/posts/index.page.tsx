@@ -1,63 +1,155 @@
 import { Data } from "lume/core/file.ts";
-import { PostTags } from "$urutau/components/shared/PostTags.tsx";
+import { createPostsArchiveUrl, createTagUrl } from "$urutau/lib/url_utils.ts";
 
 export const title: string = "Archivo de publicación";
 export const type: string = "page";
 export const layout: string = "layouts/blog.tsx";
+export const description: string =
+    "Archivo del blog de Urutaú Limited con todas las publicaciones ordenadas por fecha.";
+const POSTS_PER_PAGE: number = 10;
 
-export default (data: Lume.Data): JSX.Component => {
-    const posts: Data[] = data.search.pages("type=post", "date=desc");
-
-    return (
-        <main>
-            <h1>{title}</h1>
-            <h2>
-                El blog actual contiene: {posts.length} artículos disponibles
-            </h2>
-            <figure>
-                {posts.map((post: Data, index: number): JSX.Component => (
-                    <article key={post.url}>
-                        <section
-                            role="feed"
-                            aria-aria-labelledby="feed-label"
-                            aria-busy="false"
-                        >
-                            <article
-                                class="crowded box"
-                                aria-aria-labelledby={`post-${index + 1}`}
-                                tabindex="0"
-                                aria-setsize={posts.length}
-                            >
-                                <h4>
-                                    <a href={post.url}>
-                                        {post.title}
-                                    </a>
-                                </h4>
-                                {post.date && (
-                                    <time datetime={post.date.toISOString()}>
-                                        Publicado el:{" "}
-                                        {post.date.toLocaleDateString("es-ES", {
-                                            year: "numeric",
-                                            month: "long",
-                                            day: "numeric",
-                                        })}
-                                    </time>
-                                )}
-                                <div class="container margin">
-                                    <PostTags tags={post.tags} />
-                                </div>
-                                <p class="bold">
-                                    {post.description ||
-                                        "Haz clic en el título para leer el artículo completo."}
-                                </p>
-                            </article>
-                        </section>
-                    </article>
-                ))}
-            </figure>
-
-            <nav>
-            </nav>
-        </main>
-    );
+const escapeHtml = (value: string): string => {
+    return value
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
 };
+
+const formatDate = (date: Date): string => {
+    return date.toLocaleDateString("es-ES", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    });
+};
+
+const renderPaginationNav = (
+    pagination: NonNullable<Lume.Data["pagination"]>,
+): string => {
+    if (pagination.totalPages <= 1) {
+        return "";
+    }
+
+    const pageLinks: string = Array.from(
+        { length: pagination.totalPages },
+        (_value: unknown, index: number): string => {
+            const page: number = index + 1;
+            const href: string = createPostsArchiveUrl(page);
+            const isCurrent: boolean = page === pagination.page;
+
+            return isCurrent
+                ? `<strong><a class="<button>" aria-current="page" href="${href}">${page}</a></strong>`
+                : `<a href="${href}">${page}</a>`;
+        },
+    ).join(" ");
+
+    return `
+<nav aria-label="Paginación del blog" class="blog-pagination">
+    <p><strong>Página ${pagination.page}</strong> de ${pagination.totalPages}</p>
+    <p>
+        ${
+        pagination.previous
+            ? `<a href="${pagination.previous}">← Anterior</a>`
+            : "<span>← Anterior</span>"
+    }
+        ${pageLinks}
+        ${
+        pagination.next
+            ? `<a href="${pagination.next}">Siguiente →</a>`
+            : "<span>Siguiente →</span>"
+    }
+    </p>
+</nav>`;
+};
+
+const renderArchivePage = (
+    posts: Data[],
+    pagination: NonNullable<Lume.Data["pagination"]>,
+): string => {
+    const postItems: string = posts.map((post: Data, index: number): string => {
+        const safeTitle: string = escapeHtml(String(post.title ?? post.url));
+        const safeDescription: string = escapeHtml(String(
+            post.description ||
+                "Haz clic en el título para leer el artículo completo.",
+        ));
+        const safeUrl: string = String(post.url ?? "/posts/");
+        const tags: string[] = Array.isArray(post.tags) ? post.tags : [];
+        const tagLinks: string = tags.map((tag: string): string =>
+            `<chip class="info"><a href="${createTagUrl(tag)}">${
+                escapeHtml(tag)
+            }</a></chip>`
+        ).join("\n");
+
+        return `
+<article>
+    <section role="feed" aria-labelledby="feed-label" aria-busy="false">
+        <article
+            class="crowded box"
+            aria-labelledby="post-${index + 1}"
+            tabindex="0"
+            aria-setsize="${pagination.totalResults}"
+        >
+            <h3 id="post-${index + 1}">
+                <a href="${safeUrl}">
+                    ${safeTitle}
+                </a>
+            </h3>
+            ${
+            post.date instanceof Date
+                ? `<time datetime="${post.date.toISOString()}">Publicado el: ${
+                    formatDate(post.date)
+                }</time>`
+                : ""
+        }
+            <div class="container margin">
+                ${tagLinks}
+            </div>
+            <p class="bold">
+                ${safeDescription}
+            </p>
+        </article>
+    </section>
+</article>`;
+    }).join("\n");
+
+    return `
+<main style="--line-length: 60rem">
+    <h1>${title}</h1>
+    <h2>
+        El blog actual contiene: ${pagination.totalResults} artículos disponibles
+    </h2>
+    <p>
+        Mostrando la página ${pagination.page} de ${pagination.totalPages}.
+    </p>
+    <figure>
+        ${postItems}
+    </figure>
+    ${renderPaginationNav(pagination)}
+</main>`;
+};
+
+export default function* (data: Lume.Data) {
+    const posts: Data[] = data.search.pages("type=post", "date=desc");
+    const pages: Lume.Data[] = data.paginate(posts, {
+        size: POSTS_PER_PAGE,
+        url: createPostsArchiveUrl,
+    }) as Lume.Data[];
+
+    for (const page of pages) {
+        const pagination = page.pagination as NonNullable<
+            Lume.Data["pagination"]
+        >;
+        yield {
+            ...page,
+            content: renderArchivePage(page.results as Data[], pagination),
+            layout,
+            pagefind: true,
+            title: pagination.page === 1
+                ? title
+                : `${title} - Página ${pagination.page}`,
+            type,
+        };
+    }
+}

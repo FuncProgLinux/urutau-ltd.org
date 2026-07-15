@@ -8,7 +8,7 @@ export default (
 ) => (
     <HtmlDocument title={title} lang={lang} pagefind={true}>
         <PostNavbar />
-        <div class="container margin:auto">
+        <div class="container margin:auto" style="--line-length: 60rem">
             <div id="search"></div>
         </div>
         {children}
