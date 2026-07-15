@@ -1,5 +1,6 @@
 ---
 title: Acuerdo de Privacidad
+description: Política de privacidad y compromiso de cero recolección de datos personales en este sitio.
 layout: layout.tsx
 ---
 
