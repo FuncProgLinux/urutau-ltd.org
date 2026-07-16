@@ -1,25 +1,28 @@
 # Urutaú Limited Website
 
-> v.1.2.1 (First Light)
+> v1.3.0 (First Light)
 
 Here lies the source code of the _Urutaú Limited_ pseudo-organization. This
 website acts just as a _"formal"_ presentation card and it's used for blogging
 and nothing more interesting than that.
 
 > [!IMPORTANT]
-> The source code of this repository is developed elsewhere. GitHub is used for
-> purely utilitarian (free hosting) purposes. Codeberg is used as a read-only
-> mirror. Thus, all issues and merge requests in those platforms **will** be
-> ignored.
+> Since v1.3.0
+> [bullshit generators](https://www.gnu.org/philosophy/words-to-avoid.html#ArtificialIntelligence)
+> have been dragged here and are used as tools inside this codebase.
+>
+> This is an adoption phase to see if there's a stomachable way to integrate
+> these here. Refer to the [ROBOT.md](ROBOT.md) file to read the ruleset the
+> robots should follow. The `AGENTS` file is a symlink to said file because I
+> refuse to legitimize marketing hype, and I absolutely hate big-tech asshatery
+> polluting the language.
 
 ## Features
 
 - `missing.css` as minimalistic CSS library
 - Almost [slow types](https://jsr.io/docs/about-slow-types) free.
-- **ZERO** tracking
+- **ZERO** tracking.
 - Licensed AGPL-3.0+ (where applicable) to ensure your freedom ;)
-- Static site files
-  [verified with attestations](https://github.com/FuncProgLinux/urutau-ltd.org/attestations)
 - Browser screenreader friendly
 - Partial LibreJS compatibility through `/jslicense/`
 
