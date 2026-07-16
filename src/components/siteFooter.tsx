@@ -50,7 +50,7 @@ const SiteFooter = (): JSX.Component => {
                 Este sitio es compatible con LibreJS
             </p>
             <p>
-                Hecho con 🖤 en{" "}
+                Hecho con <span class="heart-emoji">🖤</span> en{" "}
                 <a
                     href="https://gnu.org/software/emacs"
                     target="_blank"
