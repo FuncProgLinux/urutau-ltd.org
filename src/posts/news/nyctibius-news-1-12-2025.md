@@ -15,7 +15,7 @@ tags:
 ---
 
 <figure>
-    <img class="urutau-logo" style="height: 150px; width: 150px;" src="/img/urutau.png"/>
+    <img class="urutau-logo" style="height: 150px; width: 150px;" src="/img/urutau.png" alt="Logo de Urutaú Limited"/>
     <figcaption>
             A partir de ahora la imágen que apreciarás al recibir noticias del
             software que mantenemos será la del logo de Urutaú LTD.
@@ -32,7 +32,7 @@ tags:
 
 ## Anunciando la descontinuación oficial de GUIX MATE
 
-<img style="height: 150px; width: 150px;" src="/img/guix-mate.png"/>
+<img style="height: 150px; width: 150px;" src="/img/guix-mate.png" alt="Logo del antiguo canal Guix MATE"/>
 
 La historia del canal no es larga, se remonta a inicios de este año 2025 cuando
 deseaba contribuir parches de vuelta a GNU Guix en mi entorno de escritorio

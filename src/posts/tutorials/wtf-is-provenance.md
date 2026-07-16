@@ -75,7 +75,7 @@ asegurar la calidad del código en si mismo, si no la calidad y la autenticidad
 de los _artefactos_ de un programa en particular.
 
 <figure>
-    <img class="urutau-logo" src="/img/artifact.webp" />
+    <img class="urutau-logo" src="/img/artifact.webp" alt="Representación visual de un artefacto de software" />
     <figcaption>
             Al mencionar la palabra "Artefacto" o "Artefactos"
             no puedo evitar pensar en los artefactos chozo de

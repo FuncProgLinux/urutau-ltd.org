@@ -348,4 +348,4 @@ Podrías explorar la cantidad de opciones que tiene la herramienta y pensar en
 nuevas soluciones para que lleguen más usuarios a Guix. Nos vemos luego, espero
 hayas disfrutado leyendo este artículo :)
 
-# Fin.
+## Fin.

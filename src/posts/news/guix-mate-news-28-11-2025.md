@@ -1,6 +1,6 @@
 ---
 title: "Noticias Guix MATE (2025-11-28)"
-description: Noticias del canal del entorno de escritorio MATE.
+description: Novedades del 28 de noviembre de 2025 en el canal del entorno de escritorio MATE.
 sample: Novedades en el canal GUIX MATE el día 28 de Noviembre del 2025. Ingresa para conocer las últimas actualizaciones y mejoras del software que tenemos ahí.
 date: 2025-11-28
 author: "FuncProgLinux"
@@ -13,7 +13,7 @@ tags:
     - Guix-MATE
 ---
 
-<img style="height: 150px; width: 150px;" src="/img/guix-mate.png"/>
+<img style="height: 150px; width: 150px;" src="/img/guix-mate.png" alt="Logo del canal Guix MATE"/>
 
 <details>
     <summary>Índice:</summary>
@@ -75,7 +75,7 @@ El dock [Plank](https://launchpad.net/plank) ahora se encuentra disponible en
 Guix MATE!
 
 <figure>
-    <img src="/img/plank.png"/>
+    <img src="/img/plank.png" alt="Captura del dock Plank en ejecución"/>
 
     <figcaption>
             Puedes probarlo en la última actualización del canal

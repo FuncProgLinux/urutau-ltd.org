@@ -12,7 +12,7 @@ tags:
     - Guix-MATE
 ---
 
-<img style="height: 150px; width: 150px;" src="/img/guix-mate.png"/>
+<img style="height: 150px; width: 150px;" src="/img/guix-mate.png" alt="Logo del canal Guix MATE"/>
 
 Para mantener informados a los usuarios del canal (al menos a los
 hispanohablantes) se harán publicaciones periódicas en este blog para notificar
