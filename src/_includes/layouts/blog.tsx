@@ -6,7 +6,7 @@ export default (
     { title, children, lang }: Lume.Data,
     _helpers: Lume.Helpers,
 ) => (
-    <HtmlDocument title={title} lang={lang} pagefind={true}>
+    <HtmlDocument title={title} lang={lang} pagefind>
         <PostNavbar />
         <div class="container margin:auto" style="--line-length: 60rem">
             <div id="search"></div>

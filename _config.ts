@@ -128,7 +128,7 @@ site.use(slugifyUrls({
 site.use(ogImages());
 site.use(metas());
 
-site.add("npm:missing.css@1.2.0", "missing.css");
+site.add("npm:missing.css@1.3.0", "missing.css");
 
 /* Highlight.js Syntax highlighter */
 site.use(codeHighlight({
