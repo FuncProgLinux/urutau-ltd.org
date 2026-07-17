@@ -1,0 +1,52 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Root config for all files
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+
+# JavaScript, TypeScript, JSON
+[*.{json,js,ts,jsx,tsx}]
+indent_style = space
+indent_size = 4
+
+# Markdown
+[*.{md,markdown}]
+indent_style = space
+indent_size = 2
+
+# YAML
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# CSS
+[*.css]
+indent_style = space
+indent_size = 4
+
+# Shell
+[*.sh]
+indent_style = space
+indent_size = 4
+
+# Perl
+[*.{pl,pm}]
+indent_style = space
+indent_size = 4
+
+# Emacs Lisp
+[*.el]
+indent_style = space
+indent_size = 2
+
+# Scheme
+[*.{scm,ss}]
+indent_style = space
+indent_size = 2
+
+# Makefiles (must use tabs)
+[Makefile]
+indent_style = tab
+indent_size = 4
