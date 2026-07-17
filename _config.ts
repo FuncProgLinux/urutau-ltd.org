@@ -242,7 +242,26 @@ site.use(feed({
 }));
 
 site.use(robots({
+    allow: ["Googlebot", "Bingbot"],
     disallow: "*",
+    rules: [
+        // Block AI training bots explicitly
+        { userAgent: "GPTBot", disallow: "/" },
+        { userAgent: "anthropic-ai", disallow: "/" },
+        { userAgent: "Claude-Web", disallow: "/" },
+        { userAgent: "ClaudeBot", disallow: "/" },
+        { userAgent: "Perplexity", disallow: "/" },
+        { userAgent: "PerplexityBot", disallow: "/" },
+        { userAgent: "OAI-SearchBot", disallow: "/" },
+        { userAgent: "CCBot", disallow: "/" },
+        { userAgent: "FacebookBot", disallow: "/" },
+        { userAgent: "facebookexternalhit", disallow: "/" },
+        { userAgent: "AdsBot-Google", disallow: "/" },
+        { userAgent: "MJ12bot", disallow: "/" },
+        { userAgent: "SemrushBot", disallow: "/" },
+        { userAgent: "SemrushBot-SA", disallow: "/" },
+        { userAgent: "GoogleOther", disallow: "/" },
+    ],
 }));
 
 site.use(seo({
