@@ -36,7 +36,7 @@ chip {
 p,
 a {
     font-family: "Neuton", system-ui, -apple-system, Fallback, sans-serif;
-    font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+    font-size: clamp(1.2rem, 0.95rem + 0.3vw, 1.125rem);
     font-weight: 300;
 }
 
@@ -45,7 +45,7 @@ code {
     font-weight: 300;
 }
 
-/* Override missing.css default small sizing 
+/* Override missing.css default small sizing
  * needs !important due to cascade order */
 small,
 small chip {
@@ -79,7 +79,7 @@ small chip {
     }
 
     .heart-emoji {
-        text-shadow: 0 0 0 rgba(0,0,0,0.1)
+        text-shadow: 0 0 0 rgba(0,0,0,0.1);
     }
 }
 
