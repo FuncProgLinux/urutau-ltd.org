@@ -126,6 +126,13 @@ const SiteNavbar = ({ url }: Props): JSX.Component => {
                                     text="Licencias de código libre"
                                 />
                             </li>
+                            <li>
+                                <LinkItem
+                                    currentUrl={url}
+                                    href="/llm-policy"
+                                    text="Política de uso de LLM's"
+                                />
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -133,6 +140,8 @@ const SiteNavbar = ({ url }: Props): JSX.Component => {
                             <a
                                 href="https://forge.urutau-ltd.org/"
                                 class="&lt;button&gt; inline-size:100%"
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 IT-Tools ↗︎
                             </a>
@@ -143,6 +152,8 @@ const SiteNavbar = ({ url }: Props): JSX.Component => {
                             <a
                                 href="https://tool.urutau-ltd.org/"
                                 class="&lt;button&gt; inline-size:100%"
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 CyberChef ↗︎
                             </a>
@@ -153,6 +164,8 @@ const SiteNavbar = ({ url }: Props): JSX.Component => {
                             <a
                                 href="https://siren.urutau-ltd.org/"
                                 class="&lt;button&gt; inline-size:100%"
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 Mermaid Editor ↗︎
                             </a>
