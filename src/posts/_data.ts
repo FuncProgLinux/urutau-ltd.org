@@ -12,4 +12,17 @@ const metas: Readonly<PostMeta> = {
     site: "Urutaú Limited",
 };
 
-export { layout, metas, openGraphLayout, type };
+const jsonLd = {
+    "@type": "BlogPosting",
+    headline: "=title",
+    description: "=description",
+    image: "=image || /posts/index.png",
+    datePublished: "=date",
+    inLanguage: "es",
+    author: {
+        "@type": "Person",
+        name: "=author",
+    },
+};
+
+export { jsonLd, layout, metas, openGraphLayout, type };

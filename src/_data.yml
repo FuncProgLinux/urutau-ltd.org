@@ -5,3 +5,14 @@ metas:
     title: "=title"
     image: "=image"
     lang: es
+
+jsonLd:
+    "@type": WebSite
+    name: Urutaú Limited
+    url: /
+    description: "=description || Una instalación perdida en tu oído"
+    inLanguage: es
+    author:
+        "@type": Organization
+        name: Urutaú Limited
+        url: /

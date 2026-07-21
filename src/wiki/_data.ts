@@ -10,4 +10,16 @@ const metas = {
     site: "Urutaú Limited",
 };
 
-export { layout, metas, pagefind, type };
+const jsonLd = {
+    "@type": "TechArticle",
+    headline: "=title",
+    description: "=description",
+    inLanguage: "es",
+    author: {
+        "@type": "Organization",
+        name: "Urutaú Limited",
+        url: "/",
+    },
+};
+
+export { jsonLd, layout, metas, pagefind, type };

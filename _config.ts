@@ -4,6 +4,7 @@ import codeHighlight from "lume/plugins/code_highlight.ts";
 import feed from "lume/plugins/feed.ts";
 import googleFonts from "lume/plugins/google_fonts.ts";
 import jsx from "lume/plugins/jsx.ts";
+import jsonLd from "lume/plugins/json_ld.ts";
 import lume from "lume/mod.ts";
 import metas from "lume/plugins/metas.ts";
 import ogImages from "lume/plugins/og_images.ts";
@@ -127,6 +128,7 @@ site.use(slugifyUrls({
 
 site.use(ogImages());
 site.use(metas());
+site.use(jsonLd());
 
 site.add("npm:missing.css@1.3.0", "missing.css");
 
