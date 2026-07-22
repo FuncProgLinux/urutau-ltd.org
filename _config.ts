@@ -15,6 +15,7 @@ import robots from "lume/plugins/robots.ts";
 import seo from "lume/plugins/seo.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
+import favicon from "lume/plugins/favicon.ts";
 
 // markdown-it plugins
 import mdToc from "markdown-it-toc-done-right";
@@ -85,6 +86,11 @@ const site: Site = lume({
 
 /* Enable JSX/TSX Support */
 site.use(jsx());
+
+/* Use Lume's favicon generator instead */
+site.use(favicon({
+    input: "/img/favicon.svg"
+}))
 
 site.use(pageFind({
     ui: {
