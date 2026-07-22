@@ -1,5 +1,6 @@
 ---
 title: Recomendaciones
+description: Recursos, blogs, campañas y herramientas recomendadas por el autor del sitio.
 layout: layout.tsx
 type: page
 ---
@@ -52,6 +53,7 @@ Aquí hay otros recursos en el internet que podrían interesarte:
 
 - [Defensa personal del correo electrónico](https://emailselfdefense.fsf.org/es/)
 - [JShelter una extensión antimalware para el navegador](https://jshelter.org/)
+- [Ken Thompson: Reflections on trusting trust](https://dl.acm.org/doi/10.1145/358198.358210)
 
 ## Lenguajes de programación
 
@@ -88,3 +90,7 @@ Aquí hay otros recursos en el internet que podrían interesarte:
 
 - [Missing.CSS](https://missing.style/): Biblioteca de CSS minimalista,
   extensible y con clases mínimas.
+
+## Forjas alternativas
+
+- [SecurityOps Upstream](https://git.securityops.co/securityops)

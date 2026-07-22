@@ -1,5 +1,8 @@
 ---
 title: Acerca De
+description: >
+    Qué es Urutaú Limited, qué hace este sitio y
+    qué clase de organización no pretende ser.
 layout: layout.tsx
 type: page
 ---
@@ -37,11 +40,11 @@ correo de contacto en este sitio para reportar dichos errores.
 
 ## Urutaú Limited **NO** es:
 
-- **Una empresa/empredimiento comercial**: Además de que no generamos ni un solo
-  centavo, no buscamos activamente vender productos o servicios a quienes
-  visiten este sitio, pues no estamos orientados a las ventas. Cualquier recurso
-  o desarrollo que ofrecemos en las distintas _forjas_ de `git` es puesto a
-  disposición de la comunidad bajo las licencias de Software Libre.
+- **Una empresa/empredimiento comercial**: No somos una empresa ni queremos
+  serlo. Somos un grupo pequeǹo y cerrado de informáticos y no-informáticos que
+  comparte nombre, visión y, ocasionalmente, trabajo remunerado puntual,
+  consultorías, integraciones, documentación técnica, etc. Para cubrir costos
+  sin comprometer lo que producimos.
 
 - **Una organización abierta**: La organización está compuesta por un grupo
   selecto y consolidado de personas que comparten una visión por el Software

@@ -1,5 +1,6 @@
 ---
 title: Sin conexión
+description: Página offline de la PWA con rutas disponibles mientras no hay red.
 layout: layout.tsx
 type: page
 url: /offline.html
@@ -14,6 +15,7 @@ Urutaú LTD sigue disponible sin red, pero esta ruta no estaba en caché todaví
 - [Inicio](/)
 - [Blog](/posts/)
 - [Nosotros](/about/)
+- [Wiki](/wiki/)
 - [Software](/software/)
 
 ## Recomendación

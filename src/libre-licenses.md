@@ -1,8 +1,13 @@
 ---
 title: Licencias de Código Libre
+description: >
+    Licencias, atribuciones y avisos de propiedad intelectual del software y
+    activos usados en este sitio.
 layout: layout.tsx
 type: page
 ---
+
+# Licencias de Código Libre
 
 ## Copyleft
 

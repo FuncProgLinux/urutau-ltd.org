@@ -89,8 +89,8 @@ site.use(jsx());
 
 /* Use Lume's favicon generator instead */
 site.use(favicon({
-    input: "/img/favicon.svg"
-}))
+    input: "/img/favicon.svg",
+}));
 
 site.use(pageFind({
     ui: {

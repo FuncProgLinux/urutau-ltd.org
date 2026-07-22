@@ -1,5 +1,7 @@
 ---
 title: Contacto
+description: >
+    Necesitarás poder ver en la oscuridad para contactarnos.
 layout: layout.tsx
 type: page
 ---

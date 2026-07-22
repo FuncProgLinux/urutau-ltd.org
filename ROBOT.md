@@ -61,7 +61,13 @@ DO NOT BREAK THIS RULE EVER. MAX PATCH SIZE IS 15 LINES.
 
 ## References
 
-- Lume: https://lume.land
+**Always** look up on these documentation sources before implementing any
+changes or when presenting plans:
+
+- Lume Docs: https://lume.land/docs/overview/about-lume/ (parent /docs and
+  /overview alone are 404's)
+
 - missing.css: https://missing.style (check docs for utility classes and
   variables)
+
 - Font management: See `_config.ts` googleFonts plugin config
