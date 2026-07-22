@@ -1,38 +1,38 @@
 {
-  "ai_policies": {
-    "site_name": "Urutaú Limited",
-    "site_url": "https://urutau-ltd.org",
-    "access_policies": [
-      {
-        "type": "training",
-        "policy": "PROHIBITED",
-        "description": "No permission for AI model training, fine-tuning, or embedding generation"
-      },
-      {
-        "type": "inference",
-        "policy": "ALLOWED_WITH_DISCLOSURE",
-        "description": "LLMs may reference this site's content if used to assist users in understanding FOSS and privacy",
-        "reference": "/llm.txt"
-      },
-      {
-        "type": "web_scraping",
-        "policy": "PROHIBITED",
-        "description": "Automated extraction of content for datasets or corpora is not permitted"
-      }
-    ],
-    "privacy_policy": {
-      "url": "/privacy-policy/",
-      "data_collection": "zero",
-      "tracking_free": true,
-      "cookies": false
-    },
-    "llm_usage_policy": {
-      "url": "/llm-policy.md",
-      "type": "internal_contribution_guidelines",
-      "note": "Internal policy for project contributors using LLM assistance"
-    },
-    "contact": "webmaster [at] urutau-ltd [dot] org",
-    "last_updated": "2026-07-15",
-    "robots_txt": "/robots.txt"
-  }
+    "ai_policies": {
+        "site_name": "Urutaú Limited",
+        "site_url": "https://urutau-ltd.org",
+        "access_policies": [
+            {
+                "type": "training",
+                "policy": "PROHIBITED",
+                "description": "No permission for AI model training, fine-tuning, or embedding generation"
+            },
+            {
+                "type": "inference",
+                "policy": "ALLOWED_WITH_DISCLOSURE",
+                "description": "LLMs may reference this site's content if used to assist users in understanding FOSS and privacy",
+                "reference": "/llm.txt"
+            },
+            {
+                "type": "web_scraping",
+                "policy": "PROHIBITED",
+                "description": "Automated extraction of content for datasets or corpora is not permitted"
+            }
+        ],
+        "privacy_policy": {
+            "url": "/privacy-policy/",
+            "data_collection": "zero",
+            "tracking_free": true,
+            "cookies": false
+        },
+        "llm_usage_policy": {
+            "url": "/llm-policy.md",
+            "type": "internal_contribution_guidelines",
+            "note": "Internal policy for project contributors using LLM assistance"
+        },
+        "contact": "webmaster [at] urutau-ltd [dot] org",
+        "last_updated": "2026-07-15",
+        "robots_txt": "/robots.txt"
+    }
 }
