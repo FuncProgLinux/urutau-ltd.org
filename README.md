@@ -16,6 +16,10 @@ and nothing more interesting than that.
 > robots should follow. The `AGENTS` file is a symlink to said file because I
 > refuse to legitimize marketing hype, and I absolutely hate big-tech asshatery
 > polluting the language.
+>
+> Also, there's a "skill" to make the robot less messy. It's based on
+> [Ponytail](https://github.com/DietrichGebert/ponytail) and it's LARP(ed)
+> enough to pretend it works "kinda fine".
 
 ## Features
 
@@ -65,6 +69,12 @@ Example(s):
 > repository to ensure integration with the development environment. While not
 > ideal, it was the only way to use Deno without resorting to the nonfree
 > channel.
+
+This being said, take in mind that VSCode-based editors and JS/TS in general are
+pretty dogshit-tier technologies on non FHS-systems.
+
+Which is to be expected from everything touched by Microslop or Web Developers
+in general.
 
 1. You **must** have a `deno` installation on your home directory. Any other
    directory other than `$HOME/.deno/bin` won't work. See

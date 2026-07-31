@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright © 2024-2025 Urutau-Ltd <softwarelibre@urutau-ltd.org>
+# Copyright © 2024-2026 Urutau-Ltd <softwarelibre@urutau-ltd.org>
 #
 #   , _ ,      _    _            _                     _ _      _
 #  ( o o )    | |  | |          | |                   | | |    | |

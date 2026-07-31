@@ -4,7 +4,7 @@ interface Props {
     author: string;
 }
 
-export const PostAuthor = ({ author }: Props): JSX.Component => {
+export const PostAuthor = ({ author }: Readonly<Props>): JSX.Component => {
     return (
         <chip>
             <a href={createAuthorUrl(author)}>

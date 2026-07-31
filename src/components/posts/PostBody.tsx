@@ -2,12 +2,12 @@ import { PostTags } from "$urutau/components/shared/PostTags.tsx";
 import { PostAuthor } from "../shared/PostAuthor.tsx";
 
 interface Props {
-    title: string | undefined;
-    description: string | undefined;
+    title?: string | undefined;
+    description?: string | undefined;
     date: Date;
     author: string;
     tags: string[];
-    children?: JSX.Children;
+    children?: JSX.Children | undefined;
 }
 
 /**
@@ -36,7 +36,7 @@ const PostBody = (
     };
 
     return (
-        <main style="--line-length: 60rem">
+        <main style="--line-length: 50rem">
             <h1>{title}</h1>
             <p>
                 {description}

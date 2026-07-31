@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## v1.3.0-first-light
+
+- Moved the software page into its own folder to prepare the site for wiki-style
+  growth
+- Added a dedicated wiki section with project indexes for site search
+- Added a dedicated wiki layout with project navigation, breadcrumbs and search
+- Documentation version bump
+- Took ages to do
+- Testing robot adoption
+- Migrated to _"Lora"_ font for better reading experience
+
 ## v1.2.1-first-light
 
 - Fixed public website email bugs

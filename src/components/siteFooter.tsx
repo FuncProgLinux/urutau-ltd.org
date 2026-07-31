@@ -34,8 +34,15 @@ const SiteFooter = (): JSX.Component => {
                 .
                 <br />
                 <br />
-                El código fuente de este sitio web se encuentra bajo la licencia
-                &nbsp;{" "}
+                El
+                <a
+                    href="https://sl.urutau-ltd.org/urutau-ltd/urutau-ltd.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    código fuente
+                </a>
+                de este sitio web se encuentra bajo la licencia &nbsp;{" "}
                 <a
                     href="https://spdx.org/licenses/AGPL-3.0-or-later.html"
                     target="_blank"
@@ -50,7 +57,7 @@ const SiteFooter = (): JSX.Component => {
                 Este sitio es compatible con LibreJS
             </p>
             <p>
-                Hecho con <span class="heart-emoji">🖤</span> en{" "}
+                Hecho con <span class="heart-emoji">🧉</span> en{" "}
                 <a
                     href="https://gnu.org/software/emacs"
                     target="_blank"
