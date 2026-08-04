@@ -1,4 +1,4 @@
-import { Data } from "lume/core/file.ts";
+import { Data } from "lume/types.ts";
 
 interface TaxonomyGroup {
     aliases: string[];

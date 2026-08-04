@@ -6,7 +6,7 @@ interface Props {
     description?: string | undefined;
     date: Date;
     author: string;
-    tags: string[];
+    tags?: string | string[] | undefined;
     children?: JSX.Children | undefined;
 }
 

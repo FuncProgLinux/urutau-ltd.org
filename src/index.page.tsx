@@ -1,4 +1,4 @@
-import { Data } from "lume/core/file.ts";
+import { Data } from "lume/types.ts";
 import { PostTags } from "$urutau/components/shared/PostTags.tsx";
 import { PostAuthor } from "$urutau/components/shared/PostAuthor.tsx";
 

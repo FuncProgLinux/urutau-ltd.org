@@ -1,4 +1,4 @@
-import { Data } from "lume/core/file.ts";
+import { Data } from "lume/types.ts";
 import HtmlDocument from "$urutau/components/HtmlDocument.tsx";
 import SiteFooter from "$urutau/components/siteFooter.tsx";
 import SiteNavbar from "$urutau/components/siteNavbar.tsx";

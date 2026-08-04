@@ -1,4 +1,4 @@
-import { Data } from "lume/core/file.ts";
+import { Data } from "lume/types.ts";
 import { createPostsArchiveUrl, createTagUrl } from "$urutau/lib/url_utils.ts";
 
 export const title: string = "Archivo de publicación";

@@ -1,7 +1,7 @@
 import { createTagUrl } from "$urutau/lib/url_utils.ts";
 
 interface Props {
-    tags: string[];
+    tags?: string | string[] | undefined;
 }
 
 /**
@@ -10,9 +10,10 @@ interface Props {
  * as a list of post tags.
  */
 export const PostTags = ({ tags }: Props): JSX.Component => {
+    const tagList: string[] = Array.isArray(tags) ? tags : tags ? [tags] : []
     return (
         <>
-            {tags.map((tag: string): JSX.Component => (
+            {tagList.map((tag: string): JSX.Component => (
                 <chip class="info">
                     <a href={createTagUrl(tag)}>
                         {tag}

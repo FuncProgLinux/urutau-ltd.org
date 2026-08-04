@@ -4,7 +4,7 @@ import {
     groupTaxonomyValues,
 } from "$urutau/lib/taxonomy_utils.ts";
 import { createTagUrl } from "$urutau/lib/url_utils.ts";
-import { Data } from "lume/core/file.ts";
+import { Data } from "lume/types.ts";
 
 Deno.test("groupTaxonomyValues merges aliases that resolve to the same URL", (): void => {
     const groups = groupTaxonomyValues(
@@ -32,17 +32,17 @@ Deno.test("dedupeTaxonomyPages keeps one page per URL and sorts by date desc", (
             date: new Date("2025-11-28"),
             title: "Older post",
             url: "/posts/older/",
-        } as Data,
+        } as unknown as Data,
         {
             date: new Date("2026-04-08"),
             title: "Newest post",
             url: "/posts/newest/",
-        } as Data,
+        } as unknown as Data,
         {
             date: new Date("2026-04-08"),
             title: "Newest post duplicate alias",
             url: "/posts/newest/",
-        } as Data,
+        } as unknown as Data,
     ];
 
     assertEquals(
