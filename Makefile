@@ -1,6 +1,6 @@
 # -*- mode: makefile-gmake; -*-
 # SPDX-License-Identifier: AGPL-3.0-or-later
-# Copyright © 2025 Urutau-Ltd <softwarelibre@urutau-ltd.org>
+# Copyright © 2025-2026 Urutau-Ltd <softwarelibre@urutau-ltd.org>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

@@ -4,7 +4,7 @@ export const SKIPPED_DIRS: string[] = [
     "output",
     "vendor",
     "_cache",
-    ".opencode"
+    ".opencode",
 ];
 
 // Should work for "#" and "//" debt comments.
