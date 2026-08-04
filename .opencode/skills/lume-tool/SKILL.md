@@ -6,6 +6,10 @@ description: >
     over custom CSS, core Lume plugins/built-ins over custom JS or new dependencies.
     Use on any code task touching the site: writing, adding, refactoring, fixing, or reviewing layouts, _data, Lume plugins, or missing.css classes. Also use whenever the user says "lume-tool", "be lazy", "yagni", "do less", or complains about bloat/boilerplate. Do NOT use for prose, translation, summaries.
 license: MIT
+compatibility: opencode
+metadata:
+    audience: maintainers
+    workflow: forgejo
 ---
 
 # lume-tool
@@ -51,8 +55,8 @@ Stop at the first rung that holds:
 - Fewest files possible. Shortest working diff wins.
 - Complex request? Ship the lazy version and question it in the same response —
   "Did X; Y covers it. Need full X? Say so."
-- Mark deliberate simplifications with a `<!-- lume-tool: ... -->` (HTML/Vento)
-  or `// lume-tool: ...` (JS/TS) comment, naming the ceiling and the upgrade
+- Mark deliberate simplifications with a `<!-- DEBT: ... -->` (HTML/Vento)
+  or `// DEBT: ...` (JS/TS) comment, naming the ceiling and the upgrade
   path.
 
 ## Output
