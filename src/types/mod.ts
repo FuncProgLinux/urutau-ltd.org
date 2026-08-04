@@ -44,3 +44,52 @@ export interface PostMeta {
      */
     site: string;
 }
+
+/**
+ * Represents a debt comment left by the robot in the codebase. This is only
+ * used in the debt_harvester.ts script. DO NOT USE ANYWHERE ELSE!
+ */
+export interface DebtEntry {
+    /**
+     * A given file with debt comments inside it
+     * @type{string}
+     */
+    file: string;
+
+    /**
+     * The offending line inside a file (1-indexed)
+     * @type{string}
+     */
+    line: number;
+
+    /**
+     * The reason/description of what was simplified or deferred according
+     * to the robot.
+     * @type{string}
+     */
+    reason: string;
+
+    /**
+     * Optional limit or threshold named in the comment before a refactor is
+     * required according to the robot.
+     *
+     * @type{string|undefined}
+     */
+    ceiling?: string | undefined;
+
+    /**
+     * Optional trigger event or condition to revisit the debt marked by the
+     * robot.
+     *
+     * @type{string|undefined}
+     */
+    upgrade?: string | undefined;
+
+    /**
+     * Whether an explicit 'upgrade:' trigger was provided by the robot in the
+     * code. If 'false', flags rot.
+     *
+     * @type{string|undefined}
+     */
+    hasTrigger: boolean;
+}
