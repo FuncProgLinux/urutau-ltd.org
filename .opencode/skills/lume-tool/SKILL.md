@@ -55,9 +55,8 @@ Stop at the first rung that holds:
 - Fewest files possible. Shortest working diff wins.
 - Complex request? Ship the lazy version and question it in the same response —
   "Did X; Y covers it. Need full X? Say so."
-- Mark deliberate simplifications with a `<!-- DEBT: ... -->` (HTML/Vento)
-  or `// DEBT: ...` (JS/TS) comment, naming the ceiling and the upgrade
-  path.
+- Mark deliberate simplifications with a `<!-- DEBT: ... -->` (HTML/Vento) or
+  `// DEBT: ...` (JS/TS) comment, naming the ceiling and the upgrade path.
 
 ## Output
 

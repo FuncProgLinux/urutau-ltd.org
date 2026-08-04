@@ -29,5 +29,5 @@ Don't take anything for granted with this variant.
 
 ## COPYING
 
-Same MIT license as the author used in Ponytail to respect their work.
-Commands use the same license.
+Same MIT license as the author used in Ponytail to respect their work. Commands
+use the same license.
