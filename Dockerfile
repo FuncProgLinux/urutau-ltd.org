@@ -5,7 +5,7 @@
 # client's browser using the under-the-hood ESBuild integration.
 #
 # === BUILD STAGE ===
-FROM docker.io/denoland/deno:alpine-2.9.2
+FROM docker.io/denoland/deno:alpine-2.9.4
 
 WORKDIR srv/
 
@@ -23,6 +23,6 @@ LABEL org.opencontainers.image.url=https://sl.urutau-ltd.org/urutau-ltd.org/
 LABEL org.opencontainers.image.source=https://sl.urutau-ltd.org/urutau-ltd.org/
 LABEL org.opencontainers.image.description="Static site builder image"
 LABEL org.opencontainers.image.vendor="Urutaú Limited."
-LABEL org.opencontainers.image.version="v1.3.0-first-light"
+LABEL org.opencontainers.image.version="v1.3.1-first-light"
 
 CMD ["make", "build"]

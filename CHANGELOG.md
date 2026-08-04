@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.3.1-first-light
+
+- Improve bs generator support via OpenCode
+- Upgrade to Lume v3.3.0
+- Fixed type declarations and updated dependencies
+
 ## v1.3.0-first-light
 
 - Moved the software page into its own folder to prepare the site for wiki-style
