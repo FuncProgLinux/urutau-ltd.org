@@ -55,11 +55,19 @@ Aquí hay otros recursos en el internet que podrían interesarte:
 - [JShelter una extensión antimalware para el navegador](https://jshelter.org/)
 - [Ken Thompson: Reflections on trusting trust](https://dl.acm.org/doi/10.1145/358198.358210)
 
+## "IA" (Generador de pendejadas)
+
+- [GNU, words to avoid](https://www.gnu.org/philosophy/words-to-avoid.html#ArtificialIntelligence)
+- [ChatGPT is bullshit](https://link.springer.com/article/10.1007/s10676-024-09775-5)
+
 ## Lenguajes de programación
 
 ### LISP
 
 - [Make a LISP](https://www.buildyourownlisp.com/): Escribe tu propio LISP en C.
+- [Common Lisp: A Gentle Introduction to Symbolic Computation](https://www.cs.cmu.edu/~dst/LispBook/)
+- [Land Of Lisp](http://landoflisp.com/)
+  - **WARNING:** HTTP ONLY SITE!
 
 ### Perl
 
@@ -91,6 +99,12 @@ Aquí hay otros recursos en el internet que podrían interesarte:
 - [Missing.CSS](https://missing.style/): Biblioteca de CSS minimalista,
   extensible y con clases mínimas.
 
+- [Pico CSS](https://picocss.com/): Biblioteca de CSS minimalista para HTML
+  semántico
+
 ## Forjas alternativas
 
 - [SecurityOps Upstream](https://git.securityops.co/securityops)
+- [Disroot](https://disroot.org/services/git)
+- [Codeberg](https://codeberg.org/)
+- [OpenCommit](https://opencommit.eu/)

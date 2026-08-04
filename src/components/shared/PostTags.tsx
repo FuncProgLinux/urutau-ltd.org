@@ -10,7 +10,7 @@ interface Props {
  * as a list of post tags.
  */
 export const PostTags = ({ tags }: Props): JSX.Component => {
-    const tagList: string[] = Array.isArray(tags) ? tags : tags ? [tags] : []
+    const tagList: string[] = Array.isArray(tags) ? tags : tags ? [tags] : [];
     return (
         <>
             {tagList.map((tag: string): JSX.Component => (
