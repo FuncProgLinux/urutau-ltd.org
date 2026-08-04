@@ -1,0 +1,16 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "formatter": {
+        "deno": {
+            "command": ["deno", "fmt", "."],
+            "extensions": [
+                ".js", ".ts", ".jsx", ".tsx", ".md", ".html", ".css"
+            ]
+        }
+    },
+    "lsp": true,
+    "permission": {
+        "rm": "deny",
+        "*": "ask",
+    }
+}
