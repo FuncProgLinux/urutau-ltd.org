@@ -37,6 +37,7 @@ Este sitio web utiliza la siguiente matriz de tecnologías:
 | Deno                             | Expat (MIT)               |
 | Deno `@std/assert`               | Expat (MIT)               |
 | Deno `@std/path`                 | Expat (MIT)               |
+| Deno `@std/fs`                   | Expat (MIT)               |
 | GNU Bash                         | GNU GPLv3+                |
 | GNU Emacs                        | GNU GPLv3+                |
 | GNU Guix                         | GNU GPLv3+                |
