@@ -1,20 +1,11 @@
-// DEBT: Move some logic to lib/  so unit tests can be done later
-
 import { walk } from "@std/fs/walk";
 import { relative } from "@std/path/relative";
 import { DebtEntry } from "$urutau/types";
-
-const SKIPPED_DIRS: string[] = [
-    "node_modules",
-    ".git",
-    "output",
-    "vendor",
-    "_cache",
-];
-
-// Should work for "#" and "//" debt comments.
-// DEBT: Make this work for multilined JS/TS Comments (*)
-const DEBT_REGEX: RegExp = /(?:#|\/\/)\s*DEBT:\s*(.+)$/i;
+import {
+    DEBT_REGEX,
+    parseDebtComment,
+    SKIPPED_DIRS,
+} from "$urutau/lib/debt_harvester.ts";
 
 async function harvestDebt(): Promise<void> {
     const entriesByFile: Map<string, DebtEntry[]> = new Map<
@@ -50,45 +41,18 @@ async function harvestDebt(): Promise<void> {
             if (!match) return;
 
             const rawComment: string = match[1].trim();
-
-            // Extract optional metadata from comment text:
-            // Pattern: "<what was simplified>. ceiling: <limit>. upgrade: <trigger>"
-            let reason: string = rawComment;
-            let ceiling: string | undefined;
-            let upgrade: string | undefined;
-
-            const upgradeMatch: RegExpMatchArray | null = rawComment.match(
-                /upgrade:\s*([^.]+)/i,
-            );
-            if (upgradeMatch) {
-                upgrade = upgradeMatch[1].trim();
-            }
-
-            const ceilingMatch: RegExpMatchArray | null = rawComment.match(
-                /ceiling:\s*([^.]+)/i,
-            );
-            if (ceilingMatch) {
-                ceiling = ceilingMatch[1].trim();
-            }
-
-            // Clean "what" description by removing ceiling/upgrade substrings
-            reason = reason
-                .replace(/ceiling:\s*[^.]+\.?/i, "")
-                .replace(/upgrade:\s*[^.]+\.?/i, "")
-                .trim();
-
-            const hasTrigger: boolean = Boolean(upgrade && upgrade.length > 0);
+            const parsed = parseDebtComment(rawComment);
 
             totalCount++;
-            if (!hasTrigger) noTriggerCount++;
+            if (!parsed.hasTrigger) noTriggerCount++;
 
             const debtItem: DebtEntry = {
                 file: relativePath,
                 line: index + 1,
-                reason: reason,
-                ceiling,
-                upgrade,
-                hasTrigger,
+                reason: parsed.reason,
+                ceiling: parsed.ceiling,
+                upgrade: parsed.upgrade,
+                hasTrigger: parsed.hasTrigger,
             };
 
             if (!entriesByFile.has(relativePath)) {
