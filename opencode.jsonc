@@ -4,13 +4,19 @@
         "deno": {
             "command": ["deno", "fmt", "."],
             "extensions": [
-                ".js", ".ts", ".jsx", ".tsx", ".md", ".html", ".css"
+                ".js",
+                ".ts",
+                ".jsx",
+                ".tsx",
+                ".md",
+                ".html",
+                ".css"
             ]
         }
     },
     "lsp": true,
     "permission": {
         "rm": "deny",
-        "*": "ask",
+        "*": "ask"
     }
 }
