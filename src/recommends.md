@@ -23,6 +23,9 @@ Aquí hay otros recursos en el internet que podrían interesarte:
 ## Blogs
 
 - [GUIX Blog](https://guix.gnu.org/en/blog/): Noticias oficiales de GNU Guix
+- [Phoronix](https://www.phoronix.com/): Blog de hardware
+- [Gaming On Linux](https://www.gamingonlinux.com/): Blog para los
+  videojugadores!
 
 ## Campañas a favor del software libre, la privacidad y la soberanía digital
 
@@ -31,8 +34,15 @@ Aquí hay otros recursos en el internet que podrían interesarte:
 
 ## Canales de YouTube
 
+- [Awesome](https://www.youtube.com/@awesome-coding): Canal de noticias, tips y
+  entretenimiento en el mundo digital. _En Inglés_.
+
 - [ItsZariep](https://www.youtube.com/@zariep): Canal dedicado al conocimiento
   de sistemas operativos UNIX y lenguajes de programación.
+
+- [Entropía Binaria](https://www.youtube.com/@entropiabinaria): Canal con un
+  enfoque único en filosofía, opiniones y comunidad con respecto a los temas que
+  rodean la tecnología y políticas actuales. Buenísimo para pensar.
 
 - [Low Level](https://www.youtube.com/@LowLevelTV) canal enfocado principalmente
   en review de vulnerabilidades y temas como programación de bajo nivel,
@@ -42,12 +52,29 @@ Aquí hay otros recursos en el internet que podrían interesarte:
   software libre, reviews de distribuciones GNU/Linux y tutoriales del mismo.
   _En Inglés_.
 
+- [LiveOverflow](https://www.youtube.com/@LiveOverflow/) Canal de
+  ciberseguridad, ing inversa y conocimiento de bajo nivel. _En Inglés_.
+
+- [Joshua Blais](https://www.youtube.com/@JoshuaBlais) Canal con un giro entre
+  Emacs y Filosofía. _En Inglés_.
+
+- [DriveMeca](https://www.youtube.com/@DriveMeca) Canal enfocado a la enseñanza
+  del software libre sin necesidad de ser un experto. Una comunidad única y un
+  ambiente a todo dar.
+
+- [Dr Perl](https://www.youtube.com/@perlcode6780) Canal con un montón de videos
+  para aprender el lenguaje de programacion Perl
+
 - [Logic Lambda](https://www.youtube.com/@logiclambda) Canal con tutoriales de
   Python y Scheme usando Dr Racket. _En Inglés_.
 
 - [Linux con Last Dragon](https://www.youtube.com/@lastdragonmx) Canal con temas
   de configuración avanzada de sistemas operativos GNU/Linux, Unix y Windows
   Server, además de abordar temas de redes.
+
+- [Network Chuck](https://www.youtube.com/@NetworkChuck): Canal de hacking
+  general enfocado en Linux, servidores, Kubernetes y todo el tooling que todo
+  S.R.E moderno necesita. _En Inglés_.
 
 ## Ciberseguridad
 
@@ -82,6 +109,11 @@ Aquí hay otros recursos en el internet que podrían interesarte:
   Libro gratuito para aprender a programar en Scheme y desarrollar tu lógica
   como desarrollador.
 
+### Shell
+
+- [ExplainShell](https://explainshell.com/): Un sitio para aprender comandos de
+  shell y su explicación
+
 ## Bibliotecas de Software
 
 ### Go
@@ -108,3 +140,12 @@ Aquí hay otros recursos en el internet que podrían interesarte:
 - [Disroot](https://disroot.org/services/git)
 - [Codeberg](https://codeberg.org/)
 - [OpenCommit](https://opencommit.eu/)
+
+## GNU con Linux
+
+- [Distrowatch](https://distrowatch.com/): Tracker de distribuciones Linux
+
+## Herramientas
+
+- [Contrab Guru](https://crontab.guru/): Editor de crontab visual
+- [Regex101](https://regex101.com/): Editor y probador de expresiones regulares
