@@ -1,6 +1,6 @@
 # Urutaú Limited Website
 
-> v1.3.1 (First Light)
+> v2.0.0 (Rain Dances)
 
 Here lies the source code of the _Urutaú Limited_ pseudo-organization. This
 website acts just as a _"formal"_ presentation card and it's used for blogging
@@ -224,4 +224,12 @@ For people and tools that care about policy files, the site also ships
 
 ## Deploy
 
-It's a static site. Go figure xD
+```bash
+$ make image
+
+# To test
+$ make compose-up
+
+# Deployment on VPS
+$ "It's a static site with middleware, go figure XD"
+```

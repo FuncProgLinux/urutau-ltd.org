@@ -12,7 +12,8 @@
         "missing.css": "npm:missing.css@^1.3.0",
         "$urutau/components/": "./src/components/",
         "$urutau/lib/": "./lib/",
-        "$urutau/types": "./src/types/mod.ts"
+        "$urutau/types": "./src/types/mod.ts",
+        "$urutau/routes": "./src/router.ts"
     },
     "permissions": {
         "lume": {
@@ -56,6 +57,18 @@
             "run": false,
             "ffi": false,
             "sys": false
+        },
+        "server": {
+            "read": ["./output"],
+            "import": [
+                "cdn.jsdelivr.net:443",
+                "jsr.io:443"
+            ],
+            "net": [
+                "0.0.0.0",
+                "127.0.0.1"
+            ],
+            "env": ["URUTAU_PORT"]
         }
     },
     "tasks": {
@@ -70,6 +83,10 @@
         "serve": {
             "description": "Run and serve the site for development",
             "command": "deno task lume -s"
+        },
+        "start": {
+            "description": "Start the lume HTTP server",
+            "command": "deno run -P=server serve.ts"
         },
         "new": {
             "description": "Create new content or code using artifacts",

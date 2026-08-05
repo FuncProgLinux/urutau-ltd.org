@@ -117,6 +117,27 @@
             return;
         }
 
+        // DEBT: This interaction gate only defeats instant-click bots and fetch-first
+        // scrapers. The obfuscation algorithm is public (documented in README, genmail.pl),
+        // so a bot that reads the code can decode emails regardless. Server-side challenge
+        // would be needed for real protection, but conflicts with static-site/Tutanota constraints.
+        let buttonEnabled = false;
+
+        const enableButton = () => {
+            if (!buttonEnabled) {
+                buttonEnabled = true;
+                button.disabled = false;
+            }
+        };
+
+        // Enable after real user interaction (pointer move, touch, or key press)
+        document.addEventListener("pointermove", enableButton, { once: true });
+        document.addEventListener("touchstart", enableButton, { once: true });
+        document.addEventListener("keydown", enableButton, { once: true });
+
+        // Fallback: enable after 600ms dwell time if no interaction detected
+        setTimeout(enableButton, 600);
+
         button.addEventListener("click", () => {
             try {
                 revealAddress(root);

@@ -1,0 +1,25 @@
+# Development Caddyfile for Rain Dances dev-loop
+# Use with: docker-compose up caddy urutau-dev
+# Access via: http://localhost:8080
+
+http://localhost:8080 {
+    # Reverse proxy to the urutau-dev container
+    reverse_proxy urutau-dev:8000
+
+    # Basic security headers
+    header {
+        X-Content-Type-Options    "nosniff"
+        X-Frame-Options           "DENY"
+        Referrer-Policy           "strict-origin-when-cross-origin"
+        Permissions-Policy        "geolocation=(), camera=(), microphone=(), payment=(), usb=()"
+        X-XSS-Protection          "1; mode=block"
+        -Server
+        -X-Powered-By
+    }
+
+    # Log access
+    log {
+        output stdout
+        format json
+    }
+}

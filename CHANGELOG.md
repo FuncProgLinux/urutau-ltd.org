@@ -1,5 +1,7 @@
 # CHANGELOG
 
+## v2.0.0-rain-dances
+
 ## v1.3.1-first-light
 
 - Improve bs generator support via OpenCode

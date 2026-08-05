@@ -32,11 +32,11 @@ como texto plano ni como un desafío reversible de una sola pieza.
     <p data-contact-status aria-live="polite">
         Pulsa el botón para reconstruir el correo aquí mismo.
     </p>
-    <p>
-        <button type="button" data-contact-action="reveal">
-            Revelar correo
-        </button>
-    </p>
+     <p>
+         <button type="button" data-contact-action="reveal" disabled>
+             Revelar correo
+         </button>
+     </p>
     <p hidden data-contact-output-wrap>
         <a data-contact-output></a>
     </p>
