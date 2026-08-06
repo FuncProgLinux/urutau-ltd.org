@@ -1,4 +1,5 @@
 import { Data } from "lume/types.ts";
+import { escape as escapeHtml } from "@std/html";
 
 interface TaxonomyGroup {
     aliases: string[];
@@ -31,15 +32,6 @@ const getUrlValue = (page: Data): string => {
 const getUrlLabel = (url: string): string => {
     const segments: string[] = url.split("/").filter(Boolean);
     return segments.at(-1) ?? url;
-};
-
-const escapeHtml = (value: string): string => {
-    return value
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#39;");
 };
 
 export const groupTaxonomyValues = (
