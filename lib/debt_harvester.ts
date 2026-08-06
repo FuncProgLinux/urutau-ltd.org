@@ -24,14 +24,14 @@ export const DEBT_REGEX: RegExp = /(?:#|\/\/)\s*DEBT:\s*(.+)$/i;
  * @param rawComment - The matched comment text (without DEBT: prefix)
  * @returns Parsed metadata with reason, optional ceiling/upgrade, and hasTrigger flag
  */
-export function parseDebtComment(
+export const parseDebtComment = (
     rawComment: string,
 ): {
     reason: string;
     ceiling?: string;
     upgrade?: string;
     hasTrigger: boolean;
-} {
+} => {
     let reason: string = rawComment;
     let ceiling: string | undefined;
     let upgrade: string | undefined;
@@ -64,4 +64,4 @@ export function parseDebtComment(
         upgrade,
         hasTrigger,
     };
-}
+};
