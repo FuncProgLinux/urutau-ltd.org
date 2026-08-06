@@ -4,6 +4,7 @@
         "@std/fs": "jsr:@std/fs@^1.0.24",
         "@std/html": "jsr:@std/html@^1.0.7",
         "@std/path": "jsr:@std/path@^1.1.6",
+        "@std/regexp": "jsr:@std/regexp@^1.0.2",
         "highlight.js": "npm:highlight.js@^11.11.1",
         "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@3.3.0/",
         "lume/jsx-runtime": "https://cdn.jsdelivr.net/gh/oscarotero/ssx@0.1.15/jsx-runtime.ts",

@@ -1,5 +1,14 @@
-import { assertEquals } from "@std/assert";
-import { parseDebtComment } from "$urutau/lib/debt_harvester.ts";
+import { assert, assertEquals } from "@std/assert";
+import {
+    buildSkipPattern,
+    parseDebtComment,
+} from "$urutau/lib/debt_harvester.ts";
+
+Deno.test("buildSkipPattern escapes dir names so '.' isn't a wildcard", (): void => {
+    const re = buildSkipPattern(".opencode");
+    assert(re.test("/some/.opencode/file.ts"));
+    assert(!re.test("/some/Xopencode/file.ts"));
+});
 
 Deno.test("parseDebtComment - simple reason only", () => {
     const result = parseDebtComment("just a simple reason");

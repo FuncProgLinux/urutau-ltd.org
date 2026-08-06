@@ -1,3 +1,5 @@
+import { escape } from "@std/regexp/escape";
+
 export const SKIPPED_DIRS: string[] = [
     "node_modules",
     ".git",
@@ -6,6 +8,9 @@ export const SKIPPED_DIRS: string[] = [
     "_cache",
     ".opencode",
 ];
+
+export const buildSkipPattern = (dir: string): RegExp =>
+    new RegExp(`(/|\\\\)${escape(dir)}(/|\\\\|$)`);
 
 // Should work for "#" and "//" debt comments.
 // DEBT: Make this work for multilined JS/TS Comments (*)
