@@ -277,7 +277,7 @@ site.use(wellKnown({
     security: {
         contact: "https://urutau-ltd.org/contact/",
         expires: Temporal.PlainDateTime.from("2027-04-08T00:00:00"),
-        preferredLanguages: ["es", "en"]
+        preferredLanguages: ["es", "en"],
     },
     trust: {
         contact: "https://urutau-ltd.org/contact",
@@ -285,7 +285,7 @@ site.use(wellKnown({
     },
     gpc: {
         gpc: true,
-        lastUpdate: Temporal.PlainDate.from("2026-07-15")
+        lastUpdate: Temporal.PlainDate.from("2026-07-15"),
     },
 }));
 
