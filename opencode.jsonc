@@ -17,6 +17,15 @@
     "lsp": true,
     "permission": {
         "rm": "deny",
-        "*": "ask"
-    }
+        "doom_loop": "deny",
+        "*": "ask",
+        /* Given our generation policy it makes more sense to pair up with the
+           robot instead of allowing it to edit the source for us. It also
+           saves tokens which not many people can afford wasting. */
+        "edit": "deny",
+        // DON'T GO OUTSIDE THE PROJECT!
+        "external_directory": "deny"
+    },
+    "subagent_depth": 0,
+    "share": "disabled"
 }
