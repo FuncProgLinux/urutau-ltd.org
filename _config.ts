@@ -270,6 +270,8 @@ site.use(robots({
         { userAgent: "SemrushBot", disallow: "/" },
         { userAgent: "SemrushBot-SA", disallow: "/" },
         { userAgent: "GoogleOther", disallow: "/" },
+        { userAgent: "Amazonbot", disallow: "/" },
+        { userAgent: "Bytespider", disallow: "/" },
     ],
 }));
 
