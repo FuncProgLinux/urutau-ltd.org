@@ -152,31 +152,6 @@ resistir el análisis de tráfico. La idea está inspirada en `DAITA` de Mullvad
 La documentación viva de este proyecto ahora vive en su
 [wiki dedicada](/wiki/bellbird/).
 
-## Pipe
-
-<!-- Urutaú Pipe -->
-
-<img style="width: 100px; height: 50px;"
-    src="/img/pipe.png"
-    alt="A logo consisting of two blue arrows"
-    loading="lazy"/>
-
-> Licencia: AGPLv3.0+
-
-> Desarrollo:
-> <chip class="ok">Público en
-> <a href="https://codeberg.org/urutau-ltd/pipe">Codeberg</a></chip>
-> <chip class="info">Espejo en:
-> <a href="https://github.com/urutau-ltd/pipe">GitHub</a></chip>
-
-Pipe es un runner de CI (_Continuous Integration_) estúpidamente sencillo para
-usarlo como _"runner"_ en `soft-serve` y de forma local. Es un solo binario sin
-base de datos y sin necesidad de llaves de API. Solo tiene dos comandos y puedes
-escribir tus pipelines en YML.
-
-La documentación viva de este proyecto ahora vive en su
-[wiki dedicada](/wiki/pipe/).
-
 ---
 
 ## Archivo
