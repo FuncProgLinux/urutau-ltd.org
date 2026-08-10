@@ -32,14 +32,19 @@ como texto plano ni como un desafío reversible de una sola pieza.
     <p data-contact-status aria-live="polite">
         Pulsa el botón para reconstruir el correo aquí mismo.
     </p>
-    <p>
-        <button type="button" data-contact-action="reveal">
-            Revelar correo
-        </button>
-    </p>
+     <p>
+         <button type="button" data-contact-action="reveal" disabled>
+             Revelar correo
+         </button>
+     </p>
     <p hidden data-contact-output-wrap>
         <a data-contact-output></a>
     </p>
+    <noscript>
+      <p>
+        JavaScript está desactivado. Reconstruye el correo con <code>genmail.pl</code> como se explica en la sección inferior.
+      </p>
+    </noscript>
 </div>
 
 ## Sin JavaScript

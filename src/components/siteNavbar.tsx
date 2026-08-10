@@ -16,7 +16,7 @@ const LinkItem = (
             return current === "/";
         }
 
-        const startsWithTarget = current.startsWith(target);
+        const startsWithTarget: boolean = current.startsWith(target);
         if (!startsWithTarget) {
             return false;
         }
@@ -25,7 +25,7 @@ const LinkItem = (
             return true;
         }
 
-        const charAfterTarget = current.charAt(target.length);
+        const charAfterTarget: string = current.charAt(target.length);
         return charAfterTarget === "/";
     };
 
@@ -45,6 +45,29 @@ const LinkItem = (
     );
 };
 
+interface ExternalLinkItemProps {
+    href: string;
+    text: string;
+}
+
+const ExternalLinkItem = (
+    { href, text }: ExternalLinkItemProps,
+): JSX.Component => (
+    <li>
+        <strong>
+            <a
+                href={href}
+                class="<button> inline-size:100%"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                {text}
+                <v-h>(Abrir en una pestaña nueva)</v-h> ↗︎
+            </a>
+        </strong>
+    </li>
+);
+
 const SiteNavbar = ({ url }: Props): JSX.Component => {
     return (
         <header>
@@ -58,7 +81,7 @@ const SiteNavbar = ({ url }: Props): JSX.Component => {
                 <strong>Urutaú Limited</strong>
             </p>
             <nav>
-                <ul role="list">
+                <ul role="list" class="list-of-links">
                     <li>
                         <LinkItem currentUrl={url} href="/" text="Inicio" />
                     </li>
@@ -111,7 +134,7 @@ const SiteNavbar = ({ url }: Props): JSX.Component => {
                         <p>
                             <b>Legal</b>
                         </p>
-                        <ul role="list" class="margin">
+                        <ul role="list" class="margin list-of-links">
                             <li>
                                 <LinkItem
                                     currentUrl={url}
@@ -135,42 +158,18 @@ const SiteNavbar = ({ url }: Props): JSX.Component => {
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <strong>
-                            <a
-                                href="https://forge.urutau-ltd.org/"
-                                class="&lt;button&gt; inline-size:100%"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                IT-Tools ↗︎
-                            </a>
-                        </strong>
-                    </li>
-                    <li>
-                        <strong>
-                            <a
-                                href="https://tool.urutau-ltd.org/"
-                                class="&lt;button&gt; inline-size:100%"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                CyberChef ↗︎
-                            </a>
-                        </strong>
-                    </li>
-                    <li>
-                        <strong>
-                            <a
-                                href="https://siren.urutau-ltd.org/"
-                                class="&lt;button&gt; inline-size:100%"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Mermaid Editor ↗︎
-                            </a>
-                        </strong>
-                    </li>
+                    <ExternalLinkItem
+                        href="https://forge.urutau-ltd.org/"
+                        text="IT-Tools"
+                    />
+                    <ExternalLinkItem
+                        href="https://tool.urutau-ltd.org/"
+                        text="CyberChef"
+                    />
+                    <ExternalLinkItem
+                        href="https://siren.urutau-ltd.org/"
+                        text="Mermaid Editor"
+                    />
                 </ul>
             </nav>
         </header>

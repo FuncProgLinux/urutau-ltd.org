@@ -20,7 +20,7 @@ const WikiProjectCard = (
                 </strong>
             </p>
             {description && <p>{description}</p>}
-            <ul>
+            <ul class="list-of-links">
                 {pageLinks.map((page) => (
                     <li>
                         <a href={page.url}>{page.title}</a>

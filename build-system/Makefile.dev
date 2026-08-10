@@ -34,6 +34,10 @@ dev: ## Starts a watch server for lume to show changes
 	@echo "==> [LUME/DEV]: Starting a dev loop for lume site..."
 	@deno task serve
 
+serve: ## Serve the pre-built site using Lume's production server
+	@echo "==> [LUME/SERVE]: Starting production server..."
+	@deno task start
+
 build: ## Builds the productive lume Site
 	@echo "==> [LUME/DEV]: Building lume site..."
 	@deno task build

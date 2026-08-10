@@ -1,5 +1,6 @@
 import { Data } from "lume/types.ts";
 import { createPostsArchiveUrl, createTagUrl } from "$urutau/lib/url_utils.ts";
+import { escape as escapeHtml } from "@std/html";
 
 export const title: string = "Archivo de publicación";
 export const type: string = "page";
@@ -7,15 +8,6 @@ export const layout: string = "layouts/blog.tsx";
 export const description: string =
     "Archivo del blog de Urutaú Limited con todas las publicaciones ordenadas por fecha.";
 const POSTS_PER_PAGE: number = 10;
-
-const escapeHtml = (value: string): string => {
-    return value
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#39;");
-};
 
 const formatDate = (date: Date): string => {
     return date.toLocaleDateString("es-ES", {

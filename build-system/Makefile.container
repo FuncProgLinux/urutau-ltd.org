@@ -15,17 +15,25 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-TAG := sl.urutau-ltd.org/urutau-ltd/builder:latest
+TAG := sl.urutau-ltd.org/urutau-ltd/urutau-ltd:latest
 
 image: ## Make a builder podman image for this site
 	@echo "==> [LUME/PODMAN]: Building podman image..."
 	podman build -t $(TAG) .
 	@echo "==> [LUME/PODMAN]: Finished building podman image!"
 
-oci-build: ## Builds the site using the image
-	@echo "==> [LUME/PODMAN-BUILD]: Building site using the podman image"
-	podman run --rm --name="builder" -v ./src:/srv/src -v ./output/:/srv/output $(TAG)
-	@echo "==> [LUME/PODMAN-BUILD]: Site finished building!"
+compose-up:
+	podman compose up -d
+
+compose-down:
+	podman compose down
+
+compose-restart: compose-up compose-down
+
+oci-run: ## Test the built image locally by running it
+	@echo "==> [LUME/PODMAN-RUN]: Running site image locally on port 8000..."
+	podman run --rm -p 8000:8000 -e URUTAU_PORT=8000 $(TAG)
+	@echo "==> [LUME/PODMAN-RUN]: Container stopped."
 
 push-image: ## Push OCI image to the container registry
 	podman push --tls-verify=false $(TAG)

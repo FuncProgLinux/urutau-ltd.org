@@ -17,6 +17,8 @@ import sitemap from "lume/plugins/sitemap.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import favicon from "lume/plugins/favicon.ts";
 
+import wellKnown from "lume/plugins/well_known.ts";
+
 // markdown-it plugins
 import mdToc from "markdown-it-toc-done-right";
 import mdAnchor from "markdown-it-anchor";
@@ -228,7 +230,6 @@ site.add("public/js/contact_reveal.js", "js/contact-reveal.js");
 site.add("public/llm.txt", "llm.txt");
 site.add("public/pwa/", ".");
 site.add("public/manifest.json", "manifest.json");
-site.add("public/security.txt", "security.txt");
 site.add("public/js/sw.js", "sw.js");
 
 site.use(sitemap());
@@ -269,7 +270,25 @@ site.use(robots({
         { userAgent: "SemrushBot", disallow: "/" },
         { userAgent: "SemrushBot-SA", disallow: "/" },
         { userAgent: "GoogleOther", disallow: "/" },
+        { userAgent: "Amazonbot", disallow: "/" },
+        { userAgent: "Bytespider", disallow: "/" },
     ],
+}));
+
+site.use(wellKnown({
+    security: {
+        contact: "https://urutau-ltd.org/contact/",
+        expires: Temporal.PlainDateTime.from("2027-04-08T00:00:00"),
+        preferredLanguages: ["es", "en"],
+    },
+    trust: {
+        contact: "https://urutau-ltd.org/contact",
+        dataTrainingAllowed: false,
+    },
+    gpc: {
+        gpc: true,
+        lastUpdate: Temporal.PlainDate.from("2026-07-15"),
+    },
 }));
 
 site.use(seo({

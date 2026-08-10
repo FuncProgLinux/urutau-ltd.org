@@ -21,6 +21,7 @@
     --main-font: "Lora", system-ui, -apple-system, Fallback, sans-serif;
     --display-font: "Lora", system-ui, -apple-system, Fallback, sans-serif;
     --secondary-font: "Lora", system-ui, -apple-system, Fallback, sans-serif;
+    text-rendering: optimizeLegibility;
 }
 
 /*
@@ -30,6 +31,10 @@
  */
 .pagefind-ui input {
     inline-size: 100% !important;
+}
+
+.hljs {
+    background: unset;
 }
 
 html,
@@ -54,7 +59,7 @@ chip {
 p,
 a {
     font-family: "Lora", system-ui, -apple-system, Fallback, sans-serif;
-    font-size: clamp(1.1rem, 0.95rem + 0.3vw, 1.125rem);
+    font-size: clamp(1.1rem, 0.95rem + 0.3vw, 1.13rem);
     font-weight: 300;
 }
 
@@ -70,12 +75,11 @@ small chip {
     font-size: 0.8rem !important;
 }
 
-.urutau-logo {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
+footer {
+    line-height: normal;
 }
 
+.urutau-logo,
 .urutau-404 {
     border-radius: 50%;
     width: 150px;

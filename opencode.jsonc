@@ -10,13 +10,58 @@
                 ".tsx",
                 ".md",
                 ".html",
-                ".css"
+                ".css",
+                ".yml",
+                ".yaml"
             ]
         }
     },
     "lsp": true,
     "permission": {
-        "rm": "deny",
-        "*": "ask"
+        "doom_loop": "deny",
+        "*": "ask",
+        /* Given our generation policy it makes more sense to pair up with the
+           robot instead of allowing it to edit the source for us. It also
+           saves tokens which not many people can afford wasting. */
+        "edit": "deny",
+        // DON'T GO OUTSIDE THE PROJECT!
+        "external_directory": "deny",
+        /* Robots sometimes excel being asshats and attempt to find documentation
+        by reading via find / or inside the node_modules directory, hopefully
+        this should try to stop such nonsense. */
+        "bash": {
+            "*": "ask",
+            "rm": "deny",
+            "find *": "deny",
+            "locate *": "deny",
+            "updatedb*": "deny",
+            "*node_modules*": "deny",
+            "true": "deny"
+        },
+        "read": {
+            "*": "ask",
+            "node_modules/**": "deny"
+        },
+        "glob": {
+            "*": "ask",
+            "node_modules/**": "deny",
+            "output/**": "deny"
+        },
+        "grep": {
+            "*": "ask",
+            "node_modules/**": "deny"
+        }
+    },
+    "subagent_depth": 0,
+    "share": "disabled",
+    "references": {
+        "missing-css": {
+            "path": "https://missing.style/docs/",
+            "description": "Canonical docs for missing.css utility classes, components and variables. Consult before using or suggesting any missing.css class"
+        },
+        "lume": {
+            "path": "https://lume.land/docs/",
+            "description": "Canonical Lume SSG docs. Consult before changing any .ts/.tsx/.js or .jsx files, plugins or page/layout behaviour."
+        }
     }
 }

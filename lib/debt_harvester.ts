@@ -1,3 +1,5 @@
+import { escape } from "@std/regexp/escape";
+
 export const SKIPPED_DIRS: string[] = [
     "node_modules",
     ".git",
@@ -6,6 +8,9 @@ export const SKIPPED_DIRS: string[] = [
     "_cache",
     ".opencode",
 ];
+
+export const buildSkipPattern = (dir: string): RegExp =>
+    new RegExp(`(/|\\\\)${escape(dir)}(/|\\\\|$)`);
 
 // Should work for "#" and "//" debt comments.
 // DEBT: Make this work for multilined JS/TS Comments (*)
@@ -19,14 +24,14 @@ export const DEBT_REGEX: RegExp = /(?:#|\/\/)\s*DEBT:\s*(.+)$/i;
  * @param rawComment - The matched comment text (without DEBT: prefix)
  * @returns Parsed metadata with reason, optional ceiling/upgrade, and hasTrigger flag
  */
-export function parseDebtComment(
+export const parseDebtComment = (
     rawComment: string,
 ): {
     reason: string;
     ceiling?: string;
     upgrade?: string;
     hasTrigger: boolean;
-} {
+} => {
     let reason: string = rawComment;
     let ceiling: string | undefined;
     let upgrade: string | undefined;
@@ -59,4 +64,4 @@ export function parseDebtComment(
         upgrade,
         hasTrigger,
     };
-}
+};

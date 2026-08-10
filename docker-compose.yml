@@ -1,0 +1,32 @@
+---
+services:
+    urutau-dev:
+        build: .
+        container_name: urutau-ltd-dev
+        env_file: .env
+        environment:
+            URUTAU_PORT: "8000"
+        expose:
+            - "8000"
+        networks:
+            - rain-dances
+        restart: unless-stopped
+    caddy:
+        image: caddy:latest
+        container_name: caddy-dev
+        ports:
+            - "8080:8080"
+        volumes:
+            - ./etc/caddy/Caddyfile:/etc/caddy/Caddyfile
+        environment:
+            - ACME_AGREE=true
+        networks:
+            - rain-dances
+        depends_on:
+            - urutau-dev
+        restart: unless-stopped
+
+networks:
+    rain-dances:
+        driver: bridge
+...

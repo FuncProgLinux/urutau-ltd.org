@@ -2,12 +2,13 @@ import { walk } from "@std/fs/walk";
 import { relative } from "@std/path/relative";
 import { DebtEntry } from "$urutau/types";
 import {
+    buildSkipPattern,
     DEBT_REGEX,
     parseDebtComment,
     SKIPPED_DIRS,
 } from "$urutau/lib/debt_harvester.ts";
 
-async function harvestDebt(): Promise<void> {
+const harvestDebt = async (): Promise<void> => {
     const entriesByFile: Map<string, DebtEntry[]> = new Map<
         string,
         DebtEntry[]
@@ -19,9 +20,7 @@ async function harvestDebt(): Promise<void> {
 
     for await (
         const entry of walk(cwd, {
-            skip: SKIPPED_DIRS.map((dir: string): RegExp =>
-                new RegExp(`(/|\\\\)${dir}(/|\\\\|$)`)
-            ),
+            skip: SKIPPED_DIRS.map(buildSkipPattern),
             includeDirs: false,
         })
     ) {
@@ -89,6 +88,6 @@ async function harvestDebt(): Promise<void> {
             "`no-trigger`" +
             `):** ${noTriggerCount}`,
     );
-}
+};
 
 await harvestDebt();
