@@ -5,24 +5,22 @@ const SiteFooter = (): JSX.Component => {
                 <small>
                     © 2025 - {new Date().getFullYear()}{" "}
                     Urutaú Limited. (Casi) todos los derechos reservados.
-                    <chip>v2.0.0-rain-dances</chip>
+                    <chip>v1.4.0-first-light</chip>
                 </small>
             </p>
             <p>
-                Suscribirse via: (
+                Suscribirse via:{" "}
                 <a href="/posts.rss">
                     RSS 🔔
-                </a>
-                /
+                </a>{" "}
                 <a href="/posts.json">
                     JSON 📣
                 </a>
-                )
             </p>
             <p>
                 Excepto donde se indique lo contrario, el trabajo escrito,
                 publicaciones, opiniones y parte del contenio visual se
-                encuentran bajo la licencia &nbsp;
+                encuentran bajo la licencia{" "}
                 <a
                     href="https://creativecommons.org/licenses/by-nd/4.0/deed.es"
                     target="_blank"
@@ -34,14 +32,14 @@ const SiteFooter = (): JSX.Component => {
                 .
                 <br />
                 <br />
-                El
+                El{" "}
                 <a
                     href="https://sl.urutau-ltd.org/urutau-ltd/urutau-ltd.org"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     código fuente
-                </a>
+                </a>{" "}
                 de este sitio web se encuentra bajo la licencia &nbsp;{" "}
                 <a
                     href="https://spdx.org/licenses/AGPL-3.0-or-later.html"

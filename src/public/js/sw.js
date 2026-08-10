@@ -15,7 +15,7 @@ const sw = self;
  * Cache version string. Bump the version to invalidate every cache bucket.
  * @type {string}
  */
-const CACHE_VERSION = "urutau-v2.0.0";
+const CACHE_VERSION = "urutau-v1.4.0";
 
 /**
  * Cache name that stores the application shell and other immutable assets.

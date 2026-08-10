@@ -1,6 +1,6 @@
 # Urutaú Limited Website
 
-> v2.0.0 (Rain Dances)
+> v1.4.0 (First Light)
 
 Here lies the source code of the _Urutaú Limited_ pseudo-organization. This
 website acts just as a _"formal"_ presentation card and it's used for blogging
@@ -24,11 +24,13 @@ and nothing more interesting than that.
 ## Features
 
 - `missing.css` as minimalistic CSS library
-- Almost [slow types](https://jsr.io/docs/about-slow-types) free.
-- **ZERO** tracking.
+- Almost [slow types](https://jsr.io/docs/about-slow-types) free
+- **ZERO** tracking
 - Licensed AGPL-3.0+ (where applicable) to ensure your freedom ;)
 - Browser screenreader friendly
 - Partial LibreJS compatibility through `/jslicense/`
+  - Yes, you can read and audit and learn from most application logic! Enforce
+    your rights!
 
 ## Usage
 
@@ -224,12 +226,11 @@ For people and tools that care about policy files, the site also ships
 
 ## Deploy
 
-```bash
-$ make image
+It's a static site, go figure xD
 
-# To test
-$ make compose-up
+## Stance on LLM contributions
 
-# Deployment on VPS
-$ "It's a static site with middleware, go figure XD"
-```
+While we do use LLM's this project is actively unwelcoming to any LLM
+contributions whatsoever. This stance exists because a tool marketed as
+reasoning or building trust costs maintainers real money and real time with
+sometimes no recourse. This exclusion is the recourse.

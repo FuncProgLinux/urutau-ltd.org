@@ -1,6 +1,15 @@
 # CHANGELOG
 
-## v2.0.0-rain-dances
+## v1.4.0-first-light
+
+- Replace some logic with brand new Lume plugins
+- Add a provisional server for Docker migration
+- Improve deno @std/ support
+- Fix a bug on the `debt_harverster` script where a leading `.` would be a
+  mistaken incorporation into the RegExp for `SKIPPED_DIRS` map.
+- Add a theme switcher
+- Improved legibility and styles
+- Improved ARIA patterns
 
 ## v1.3.1-first-light
 
