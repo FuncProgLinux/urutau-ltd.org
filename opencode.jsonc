@@ -10,7 +10,9 @@
                 ".tsx",
                 ".md",
                 ".html",
-                ".css"
+                ".css",
+                ".yml",
+                ".yaml"
             ]
         }
     },
@@ -33,7 +35,8 @@
             "find *": "deny",
             "locate *": "deny",
             "updatedb*": "deny",
-            "*node_modules*": "deny"
+            "*node_modules*": "deny",
+            "true": "deny"
         },
         "read": {
             "*": "ask",
@@ -41,7 +44,8 @@
         },
         "glob": {
             "*": "ask",
-            "node_modules/**": "deny"
+            "node_modules/**": "deny",
+            "output/**": "deny"
         },
         "grep": {
             "*": "ask",
