@@ -110,3 +110,29 @@ changes or when presenting plans:
   variables)
 
 - Font management: See `_config.ts` googleFonts plugin config
+
+## Context Modules
+
+On-demand reference docs in `.opencode/context`. Load the relevant module when
+it touches its domain:
+
+| Module               | Load when                                                        |
+| -------------------- | ---------------------------------------------------------------- |
+| `architecture.md`    | Build pipeline, source layout, component map, frontmatter        |
+| `fonts-and-css.md`   | Font stack, missing.css, CSS overrides                           |
+| `testing.md`         | Deno test patterns, test locations, introducing/correcting tests |
+| `codebase-search.md` | MCP tool usage (`where_is`, `outline`, `references_to`)          |
+
+## Symbol navigation
+
+A small MCP server at `scripts/urutau_mcp.ts` provides structured symbol lookup
+for `.ts`, `.tsx`, `.js`, `.jsx` files with three tools exposed for robot
+convinience:
+
+- `whereis(name)`: Returns exported definitions matching `name`.
+- `outline(module)`: Returns all exports from a given `module`.
+- `references_to(name)`: A word boundary tool that shows `name` matches across
+  the source tree
+
+Always use these instead of `grep` for codebase navigation. Run with
+`deno task urutau_mcp` manually for testing changes.

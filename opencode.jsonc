@@ -52,6 +52,18 @@
             "node_modules/**": "deny"
         }
     },
+    "mcp": {
+        "urutau": {
+            "type": "local",
+            "command": [
+                "deno",
+                "run",
+                "-P=urutau_mcp",
+                "scripts/urutau_mcp.ts"
+            ],
+            "enabled": true
+        }
+    },
     "subagent_depth": 0,
     "share": "disabled",
     "references": {

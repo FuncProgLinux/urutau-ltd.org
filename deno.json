@@ -70,6 +70,22 @@
                 "127.0.0.1"
             ],
             "env": ["URUTAU_PORT"]
+        },
+        "urutau_mcp": {
+            "read": ["."],
+            "write": false,
+            "import": [
+                "jsr.io:443",
+                "registry.npmjs.org:443"
+            ],
+            "net": [
+                "jsr.io:443",
+                "registry.npmjs.org:443"
+            ],
+            "env": false,
+            "run": false,
+            "ffi": false,
+            "sys": false
         }
     },
     "tasks": {
@@ -96,6 +112,10 @@
         "harvest_debt": {
             "description": "Run the debt harvester script",
             "command": "deno run -P=debt_harvester scripts/debt_harvester.ts"
+        },
+        "urutau_mcp": {
+            "description": "Start the Urutau website MCP symbol-lookup server",
+            "command": "deno run -P=urutau_mcp scripts/urutau_mcp.ts"
         }
     },
     "compilerOptions": {
