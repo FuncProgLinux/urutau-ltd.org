@@ -107,8 +107,14 @@ site.ignore(
 site.use(redirects());
 
 site.use(googleFonts({
-    fonts:
-        "https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap",
+    //    fonts:
+    //        "https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap",
+    fonts: {
+        Lora:
+            "https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap",
+        mono:
+            "https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap",
+    },
     cssFile: "/urutau.css",
 }));
 
