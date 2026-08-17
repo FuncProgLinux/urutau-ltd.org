@@ -309,31 +309,52 @@ const processRequest = async (
 
         let text: string;
         if (toolName === "where_is") {
-            const hits = await whereIs(args.name);
-            text = formatHits(
-                hits,
-                hits.length + " definition(s) of " +
-                    JSON.stringify(args.name),
-            );
-        } else if (toolName === "outline") {
-            const hits = await outline(args.module);
-            if (hits.length === 0) {
-                text = "No module matching " +
-                    JSON.stringify(args.module) +
-                    " or no exports found";
+            if (!args.name?.trim()) {
+                console.error(
+                    `[MCP] Invalid args for where_is: name missing or empty`,
+                );
+                text = "Error: name parameter required and non-empty";
             } else {
+                const hits = await whereIs(args.name);
                 text = formatHits(
                     hits,
-                    hits.length + " export(s) from " + hits[0].file,
+                    hits.length + " definition(s) of " +
+                        JSON.stringify(args.name),
                 );
             }
+        } else if (toolName === "outline") {
+            if (!args.module?.trim()) {
+                console.error(
+                    `[MCP] Invalid args for outline: module missing or empty`,
+                );
+                text = "Error: module parameter required and non-empty";
+            } else {
+                const hits = await outline(args.module);
+                if (hits.length === 0) {
+                    text = "No module matching " +
+                        JSON.stringify(args.module) +
+                        " or no exports found";
+                } else {
+                    text = formatHits(
+                        hits,
+                        hits.length + " export(s) from " + hits[0].file,
+                    );
+                }
+            }
         } else if (toolName === "references_to") {
-            const hits = await referencesTo(args.name);
-            text = formatHits(
-                hits,
-                hits.length + " reference(s) to " +
-                    JSON.stringify(args.name),
-            );
+            if (!args.name?.trim()) {
+                console.error(
+                    `[MCP] Invalid args for references_to: name missing or empty`,
+                );
+                text = "Error: name parameter required and non-empty";
+            } else {
+                const hits = await referencesTo(args.name);
+                text = formatHits(
+                    hits,
+                    hits.length + " reference(s) to " +
+                        JSON.stringify(args.name),
+                );
+            }
         } else {
             return {
                 jsonrpc: "2.0",
@@ -367,9 +388,15 @@ const processRequest = async (
 };
 
 const main = async (): Promise<void> => {
+    Deno.addSignalListener("SIGTERM", () => Deno.exit(0));
+
     let buffer: string = "";
     for await (const chunk of Deno.stdin.readable) {
         buffer += DECODER.decode(chunk);
+        if (buffer.length > 1_000_000) {
+            console.error("[MCP] Buffer exceeded 1MB, closing");
+            Deno.exit(1);
+        }
         let nl: number;
 
         while ((nl = buffer.indexOf("\n")) !== -1) {
