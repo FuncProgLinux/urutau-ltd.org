@@ -6,7 +6,7 @@ layout: layout.tsx
 type: page
 ---
 
-## Política de uso de robots generadores de texto
+# Política de uso de robots generadores de texto
 
 > Términos: "Generador de basura"/"Robot" = LLM/Chatbot/Agente/Cualquier sistema
 > de "IA" generativa.

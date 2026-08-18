@@ -75,13 +75,9 @@ const renderArchivePage = (
         ).join("\n");
 
         return `
-<article>
-    <section role="feed" aria-labelledby="feed-label" aria-busy="false">
         <article
             class="crowded box"
             aria-labelledby="post-${index + 1}"
-            tabindex="0"
-            aria-setsize="${pagination.totalResults}"
         >
             <h3 id="post-${index + 1}">
                 <a href="${safeUrl}">
@@ -101,23 +97,22 @@ const renderArchivePage = (
             <p class="bold">
                 ${safeDescription}
             </p>
-        </article>
-    </section>
-</article>`;
+        </article>`;
     }).join("\n");
 
     return `
 <main style="--line-length: 60rem">
     <h1>${title}</h1>
-    <h2>
+    <h2 id="feed-label">
         El blog actual contiene: ${pagination.totalResults} artículos disponibles
     </h2>
     <p>
         Mostrando la página ${pagination.page} de ${pagination.totalPages}.
     </p>
-    <figure>
+    
+    <section role="feed" aria-labelledby="feed-label" aria-busy="false">
         ${postItems}
-    </figure>
+    </section>
     ${renderPaginationNav(pagination)}
 </main>`;
 };

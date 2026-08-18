@@ -4,7 +4,7 @@ description: Pantallas para flujos CRUD con vista dividida
 wiki_project: Vexilo
 ---
 
-# panelcrud
+## panelcrud
 
 El paquete `panelcrud` es una capa de ayuda pequeña para pantallas CRUD
 HTML-first con vista dividida lista/editor.
@@ -19,8 +19,6 @@ markup. `panelcrud` solo ayuda con dos tareas repetitivas:
 
 No crea handlers, formularios, rutas, repositorios ni componentes de
 presentación.
-
----
 
 ## Tipos
 
@@ -42,8 +40,6 @@ type Targets struct {
 | `ListTriggerIDs`   | Valores de `HX-Trigger` que se tratan como peticiones de lista      |
 | `ListTriggerNames` | Valores de `HX-Trigger-Name` que se tratan como peticiones de lista |
 
----
-
 ### `Update`
 
 ```go
@@ -59,8 +55,6 @@ type Update struct {
 | `Editor` | HTML que se escribe como fragmento principal                                       |
 | `List`   | HTML que se inserta como innerHTML del `tbody` identificado por `Targets.ListBody` |
 | `OOB`    | Fragmentos OOB adicionales del llamador, añadidos después del refresh de lista     |
-
----
 
 ## Métodos
 

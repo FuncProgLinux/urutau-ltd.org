@@ -4,9 +4,10 @@ import PostBody from "$urutau/components/posts/PostBody.tsx";
 import SiteFooter from "$urutau/components/siteFooter.tsx";
 
 export default (
-    { title, children, lang, description, author, tags, date }: Lume.Data,
+    { title, children, lang, description, author, tags, date, readingInfo }:
+        Lume.Data,
     _helpers: Lume.Helpers,
-) => (
+): JSX.Component => (
     <HtmlDocument title={title} lang={lang}>
         <PostNavbar />
         <PostBody
@@ -15,6 +16,7 @@ export default (
             author={author}
             tags={tags}
             date={date}
+            readingInfo={readingInfo}
         >
             {children}
         </PostBody>

@@ -32,25 +32,26 @@ El sitio se despliega y genera pruebas de
 
 Este sitio web utiliza la siguiente matriz de tecnologías:
 
-| Tecnología                       | Licencia                  |
-| -------------------------------- | ------------------------- |
-| Deno                             | Expat (MIT)               |
-| Deno `@std/assert`               | Expat (MIT)               |
-| Deno `@std/path`                 | Expat (MIT)               |
-| Deno `@std/fs`                   | Expat (MIT)               |
-| GNU Bash                         | GNU GPLv3+                |
-| GNU Emacs                        | GNU GPLv3+                |
-| GNU Guix                         | GNU GPLv3+                |
-| GNU Make                         | GNU GPLv3+                |
-| Highlight.JS                     | BSD-3-Clause              |
-| Lume                             | Expat (MIT)               |
-| Missing.CSS                      | BSD-2-Clause              |
-| Perl `v5.36`                     | Artistic o GNU GPL v1+*   |
-| Podman                           | Apache 2.0                |
-| TypeScript                       | Apache 2.0                |
-| `npm:markdown-it-toc-done-right` | Expat (MIT)               |
-| `npm:markdown-it-attrs`          | Expat (MIT)               |
-| `npm:markdown-it-anchor`         | Public Domain (Unlicense) |
+| Tecnología                                   | Licencia                  |
+| -------------------------------------------- | ------------------------- |
+| Deno                                         | Expat (MIT)               |
+| Deno `@std/assert`                           | Expat (MIT)               |
+| Deno `@std/path`                             | Expat (MIT)               |
+| Deno `@std/fs`                               | Expat (MIT)               |
+| Deno `@std/html`                             | Expat (MIT)               |
+| Deno `@std/regexp`                           | Expat (MIT)               |
+| GNU Bash                                     | GNU GPLv3+                |
+| GNU Emacs                                    | GNU GPLv3+                |
+| GNU Guix                                     | GNU GPLv3+                |
+| GNU Make                                     | GNU GPLv3+                |
+| Highlight.JS                                 | BSD-3-Clause              |
+| Lume                                         | Expat (MIT)               |
+| Missing.CSS                                  | BSD-2-Clause              |
+| Perl `v5.36`                                 | Artistic o GNU GPL v1+*   |
+| Podman                                       | Apache 2.0                |
+| TypeScript                                   | Apache 2.0                |
+| `npm:markdown-it-anchor`                     | Public Domain (Unlicense) |
+| `jsr:@funcproglinux/markdown-it-toc-revived` | GNU AGPLv3+               |
 
 > *El [sitio web de Perl](https://dev.perl.org/licenses/) dice "either version
 > 1, or (at your option) any later version". Se utiliza la versión posterior
@@ -60,8 +61,8 @@ Este sitio web utiliza la siguiente matriz de tecnologías:
 
 ## urutau.png / urutau.svg
 
-El logo presente en esta página es propiedad de Urutaú Limited, también conocido
-como Urutaú LTD. Puedes utilizarlo bajo la licencia
+El logo presente y sus variantes en esta página son propiedad de Urutaú
+Limited,también conocido como Urutaú LTD. Puedes utilizarlo bajo la licencia
 [Creative Commons Atribución/Reconocimiento-SinDerivados 4.0 Internacional (CC-BY-ND 4.0)](https://creativecommons.org/licenses/by-nd/4.0/deed.es).
 
 ## gavia.png

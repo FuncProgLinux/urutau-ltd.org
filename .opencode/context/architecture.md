@@ -13,7 +13,7 @@
 | `googleFonts`   | Downloads Lora, writes `@font-face` to `output/urutau.css`  |
 | `postcss`       | CSS processing                                              |
 | `base_path`     | Normalize resource paths                                    |
-| `slugifyUrls`   | Accent folding (Á→A, etc.)                                  |
+| `slugifyUrls`   | Accent folding (Á to A, etc.)                               |
 | `ogImages`      | OpenGraph image generation                                  |
 | `metas`         | Meta tag generation                                         |
 | `jsonLd`        | Structured data                                             |

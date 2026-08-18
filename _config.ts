@@ -19,10 +19,12 @@ import favicon from "lume/plugins/favicon.ts";
 
 import wellKnown from "lume/plugins/well_known.ts";
 
+import readingInfo from "lume/plugins/reading_info.ts";
+
 // markdown-it plugins
-import mdToc from "markdown-it-toc-done-right";
 import mdAnchor from "markdown-it-anchor";
-import mdAttrs from "markdown-it-attrs";
+
+import { toc } from "@funcproglinux/markdown-it-toc-revived";
 
 // Additional highlight.JS languages
 import lang_awk from "highlight.js/lib/languages/awk";
@@ -64,26 +66,24 @@ const site: Site = lume({
     },
 }, {
     markdown: {
+        options: { html: true },
         plugins: [
-            [mdToc, {
+            toc({
                 level: [2, 3, 4, 5, 6],
                 listType: "ul",
                 containerClass: "table-of-contents",
                 listClass: "nested-list",
-            }],
-            [mdAnchor, {
-                permalink: mdAnchor.permalink.linkInsideHeader({
-                    placement: "before",
-                    symbol: "☍",
-                    class: "text-decoration-none",
-                }),
-            }],
-            mdAttrs,
+            }),
         ],
-        options: {
-            html: true,
-        },
     },
+});
+
+site.hooks.addMarkdownItPlugin(mdAnchor, {
+    permalink: mdAnchor.permalink.linkInsideHeader({
+        placement: "before",
+        symbol: "§",
+        class: "text-decoration-none",
+    }),
 });
 
 /* Enable JSX/TSX Support */
@@ -107,8 +107,6 @@ site.ignore(
 site.use(redirects());
 
 site.use(googleFonts({
-    //    fonts:
-    //        "https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap",
     fonts: {
         Lora:
             "https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap",
@@ -145,6 +143,8 @@ site.use(metas());
 site.use(jsonLd());
 
 site.add("npm:missing.css@1.3.0", "missing.css");
+site.add("npm:missing.css@1.3.0/dist/js/feed.js", "js/feed.js");
+site.add("npm:missing.css@1.3.0/dist/js/19.js", "js/19.js");
 
 /* Highlight.js Syntax highlighter */
 site.use(codeHighlight({
@@ -233,7 +233,7 @@ site.add("public/.well-known/", ".well-known/");
 site.add("public/js/register_sw.js", "js/register-sw.js");
 site.add("public/js/pagefind_init.js", "js/pagefind-init.js");
 site.add("public/js/contact_reveal.js", "js/contact-reveal.js");
-site.add("public/llm.txt", "llm.txt");
+site.add("public/llms.txt", "llms.txt");
 site.add("public/pwa/", ".");
 site.add("public/manifest.json", "manifest.json");
 site.add("public/js/sw.js", "sw.js");
@@ -316,5 +316,7 @@ site.use(seo({
         }
     },
 }));
+
+site.use(readingInfo());
 
 export default site;

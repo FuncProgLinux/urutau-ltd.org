@@ -4,7 +4,7 @@ description: Snippets de HTMX para operaciones de presentación
 wiki_project: Vexilo
 ---
 
-# fragment
+## fragment
 
 El paquete `fragment` escribe respuestas HTML y compone fragmentos HTMX
 out-of-band.

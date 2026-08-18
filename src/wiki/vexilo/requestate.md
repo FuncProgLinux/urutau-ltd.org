@@ -1,6 +1,6 @@
 ---
 title: Vexilo - Request State
-description: Biblioteca HTMX para vistas partida lista/editor
+description: Request view limiter
 wiki_project: Vexilo
 ---
 
@@ -9,8 +9,6 @@ vistas de lista.
 
 Solo lee los campos `q` y `limit` que las páginas de lista HTML-first comparten
 entre query strings GET y bodies `application/x-www-form-urlencoded`.
-
----
 
 ## Tipos
 

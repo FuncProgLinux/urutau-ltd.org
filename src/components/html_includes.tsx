@@ -38,6 +38,7 @@ const HeadIncludes = ({ title }: Props): JSX.Component => {
                 name="apple-mobile-web-app-status-bar-style"
                 content="blue"
             />
+            <script type="module" defer src="/js/feed.js"></script>
             <script defer src="/js/register-sw.js"></script>
             <script defer src="/js/contact-reveal.js"></script>
         </head>

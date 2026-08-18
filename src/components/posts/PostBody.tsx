@@ -1,4 +1,5 @@
 import { PostTags } from "$urutau/components/shared/PostTags.tsx";
+import { ReadingInfo } from "lume/plugins/reading_info.ts";
 import { PostAuthor } from "../shared/PostAuthor.tsx";
 
 interface Props {
@@ -8,6 +9,7 @@ interface Props {
     author: string;
     tags?: string | string[] | undefined;
     children?: JSX.Children | undefined;
+    readingInfo: ReadingInfo;
 }
 
 /**
@@ -18,7 +20,9 @@ interface Props {
  * @returns {JSX.Component} a JSX component representing the post reading section
  */
 const PostBody = (
-    { title, description, author, tags, children, date }: Readonly<Props>,
+    { title, description, author, tags, children, date, readingInfo }: Readonly<
+        Props
+    >,
 ): JSX.Component => {
     if (typeof title === "undefined") {
         title = "Got 'undefined' value for this component.";
@@ -41,9 +45,14 @@ const PostBody = (
             <p>
                 {description}
                 <br />
-                <b>Escrito por</b>: &nbsp;
+                <strong>Escrito por</strong>: &nbsp;
                 <PostAuthor author={author} />
                 &nbsp; el: &nbsp; {date.toLocaleDateString("es-MX", dateOpts)}
+                <br />
+                <strong>
+                    Tiempo de lectura: {readingInfo.minutes} minutos |{" "}
+                    {readingInfo.words} palabras.
+                </strong>
             </p>
             <div class="container">
                 Etiquetas:&nbsp;

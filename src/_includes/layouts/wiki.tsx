@@ -26,7 +26,7 @@ const WikiLayout = (
         ? createWikiProjectUrl(projectName)
         : undefined;
     const childPages: Data[] = projectUrl
-        ? relatedPages.filter((page: Data) => page.url !== projectUrl)
+        ? relatedPages.filter((page: Data): boolean => page.url !== projectUrl)
         : [];
     const showBreadcrumbs: boolean = url !== "/wiki/" && url !== projectUrl;
 

@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## v1.5.0-first-light
+
+- Improve built in MCP server security/quality of life
+- Add a better monospaced font for code examples
+- Integrate Missing.CSS JavaScript tools for ARIA patterns
+- Update to Lume 3.3.1
+  - Replace `markdown-it-toc-done-right` for my revived plugin
+    `markdown-it-toc-revived` to match the new Lume types.
+- Add Reading information to articles via `readingInfo` Lume Plugin
+- Use correct practices for `llms.txt` file
+
 ## v1.4.0-first-light
 
 - Replace some logic with brand new Lume plugins
