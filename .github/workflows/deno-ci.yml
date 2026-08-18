@@ -20,6 +20,10 @@ jobs:
               with:
                   deno-version: v2.x
 
+            - name: Install perl dependencies
+              run: |
+                  sudo apt install -y libreadonly-perl
+
             - name: Verify code quality
               run: make ci
 ...
